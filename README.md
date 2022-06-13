@@ -18,7 +18,7 @@ Contains:
 
 1) Create your own project as normal, replacing `example-app`
    with the name of your application.
-    - `curl -s https://laravel.build/example-app?with=mariadb,redis,minio,mailhog,memcached,meilisearch,selenium | bash`
+    - `curl -s https://laravel.build/example-app?with=mariadb | bash`
 2) Perform `sail up` to run the base application
 3) Run the command: `sail artisan vendor:publish --tag=sail-docker`
 4) Perform `sail down` (or use `CTRL`+`C`) to stop the container
@@ -61,7 +61,7 @@ sail composer require jenssegers/mongodb
 sail composer require --dev barryvdh/laravel-debugbar
 ```
 
-Install the breese components as required:
+Install the Breeze components as required:
 
 ```shell
 sail artisan breeze:install
@@ -265,11 +265,15 @@ Check the files named below, or in each of the following folders to see which ha
 - app/Http/Controllers
 - app/Models
 
-# TODO
+# TO DO
 
-Look for the TODO in code that is not part of the vendor or node_modules. These are items that need to be done.
+Look for the TODO in code that is not part of the vendor or node_modules.
+
+These are items that need to be done.
 
 # Admin Pages
+
+Pages to access when using Laravel in Docker (plus extras).
 
 - Main site: http://localhost or browser sync http://localhost:3000
 - Mongo Express: http://localhost:8282
