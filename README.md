@@ -247,6 +247,24 @@ you *usually* may execute:
 sail artisan migrate:fresh --seed --step
 ```
 
+# Other changed locations
+
+Check the files named below, or in each of the following folders to see which have changed:
+
+- config
+- database
+- resource/css resource/js resource/sass resource/views
+- .env
+- docker-compose.yml
+- webpack.mix.js
+- package.json
+- composer.json
+- .gitignore
+- routes/web.php
+- app/Http/Requests
+- app/Http/Controllers
+- app/Models
+
 # TODO
 
 Look for the TODO in code that is not part of the vendor or node_modules. These are items that need to be done.

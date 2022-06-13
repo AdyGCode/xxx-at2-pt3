@@ -245,6 +245,9 @@ class CollectorsSeeder extends Seeder
                 "cars" => [],
             ],
         ];
+
+        shuffle($collectors);
+
         foreach ($collectors as $collector) {
             Collector::create($collector);
         }
