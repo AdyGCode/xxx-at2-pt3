@@ -30,6 +30,23 @@ Contains:
    mongodb and mongo-express running as part of the development
    environment.
 
+## Modify the `Dockerfile`
+
+Open the `docker/8.1/Dockerfile`, ensure that these lines are present:
+
+```dockerfile
+RUN setcap "cap_net_bind_service=+ep" /usr/bin/php8.1
+
+RUN pecl install mongodb
+RUN echo "extension=mongodb.so" > /etc/php/8.1/cli/php.ini
+
+RUN groupadd --force -g $WWWGROUP sail
+RUN useradd -ms /bin/bash --no-user-group -g $WWWGROUP -u 1337 sail
+```
+
+The `docker-compose.yaml` file should not have any issues, and it includes the required MongoDB,
+Mongo-Express and other service details.
+
 # Additional Laravel Packages
 
 - Laravel Breeze (laravel/breeze)
@@ -44,7 +61,7 @@ sail composer require jenssegers/mongodb
 sail composer require --dev barryvdh/laravel-debugbar
 ```
 
-Install as required:
+Install the breese components as required:
 
 ```shell
 sail artisan breeze:install
@@ -83,7 +100,6 @@ sail artisan vendor:publish --tag=laravel-errors
 sail artisan vendor:publish --tag=laravel-mail
 sail artisan vendor:publish --tag=laravel-notifications  
 sail artisan vendor:publish --tag=laravel-pagination
-sail artisan vendor:publish --tag=sail-docker
 sail artisan vendor:publish --tag=sanctum-config 
 sail artisan vendor:publish --tag=sanctum-migrations
 ```
@@ -102,7 +118,7 @@ Run the command:
 sail artisan sail:publish
 ```
 
-Add the following lines to `webpack.mix.json`:
+Add the following lines to `webpack.mix.js`:
 
 ```js
 mix.browserSync({
@@ -137,6 +153,33 @@ In your second CLI re-run Mix:
 Open browser to `http://localhost:3000` to have the browser sync to the development.
 
 > Tip found at https://blog.devgenius.io/quick-tip-laravel-mix-hot-reloading-in-sail-with-browsersync-555b6c97bca3
+
+# Configurations
+
+## `config/database.php` File
+
+Edit this file and make sure that a section for MongoDB is present in the `connections`
+details (Note there is a TO DO for this in the example file):
+
+```php
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'url' => env('MONGO_URL'),
+            'host' => env('MONGO_HOST', 'localhost'),
+            'port' => env('MONGO_PORT', '27017'),
+            'database' => env('MONGO_DATABASE', 'forge'),
+            'username' => env('MONGO_USERNAME', 'forge'),
+            'password' => env('MONGO_PASSWORD', ''),
+            # 'dsn' => env('MONGO_URI',
+            # 'mongodb+srv://username:password@<atlas-cluster-uri>/myappdb?retryWrites=true&w=majority'),
+            'options' => [
+                // here you can pass more settings to the Mongo Driver Manager
+                // see https://www.php.net/manual/en/mongodb-driver-manager.construct.php under "Uri Options" for a list of complete parameters that you can use
+
+                'database' => env('DB_AUTHENTICATION_DATABASE', 'admin'), // required with Mongo 3+
+            ],
+        ],
+```
 
 # Users
 
@@ -197,18 +240,20 @@ The Collectors are given as an example of using MongoDB for CRUD etc.
 
 ## Create & Seed
 
-Remember that when developing you *usually* may execute:
+To re-run and reseed the database creations, remember that when developing
+you *usually* may execute:
 
 ```shell
 sail artisan migrate:fresh --seed --step
 ```
 
-To re-run and reseed the database creations.
+# TODO
+
+Look for the TODO in code that is not part of the vendor or node_modules. These are items that need to be done.
 
 # Admin Pages
 
-- Main site: http://localhost
-- Main site (browsersync): http://localhost:3000
+- Main site: http://localhost or browser sync http://localhost:3000
 - Mongo Express: http://localhost:8282
 - MailHog: http://localhost:8025
 - Minio: http://localhost:9000 (sail/password)

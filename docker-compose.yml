@@ -42,8 +42,8 @@ services:
         networks:
             - sail
         volumes:
-            # seeding scripts
-            # - ./mongo-entrypoint:/docker-entrypoint-initdb.d
+            # service initialisation scripts
+            # - ./docker/mongo-entrypoint:/docker-entrypoint-initdb.d
             # named volumes
             - mongodb:/data/db
             - mongoconfig:/data/configdb

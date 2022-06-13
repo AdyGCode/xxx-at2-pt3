@@ -31,14 +31,19 @@
     <main>
 
         @if ($message = Session::get('success'))
-            <div class="border-green-900 border-2 border-solid bg-green-800
-                                        text-white px-2 my-2 py-1 rounded">
-                <p class="flex-1">
-                    <i class="fas fa-smile mr-6 pl-2"></i>
-                    <span class="align-middle">
-                                        {{ $message }}
-                                    </span>
-                </p>
+            <div class="my-12 py-4">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div
+                        class="bg-green-800 text-white overflow-hidden
+                               shadow-sm sm:rounded-lg rounded border-2 border-solid p-2 my-2 ">
+                        <p class="flex-1">
+                            <i class="fas fa-smile mr-6 pl-2"></i>
+                            <span class="align-middle">
+                                {{ $message }}
+                            </span>
+                        </p>
+                    </div>
+                </div>
             </div>
         @endif
 

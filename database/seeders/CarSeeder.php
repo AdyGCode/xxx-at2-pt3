@@ -14,6 +14,9 @@ class CarSeeder extends Seeder
      */
     public function run()
     {
+        # TODO: Add default car details to this seeder
+        # TODO: See database/json/cars.json for sample data
+
         //
     }
 }

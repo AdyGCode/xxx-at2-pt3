@@ -13,6 +13,7 @@ class UpdateCarRequest extends FormRequest
      */
     public function authorize()
     {
+        # TODO: allow when authenticated
         return false;
     }
 
@@ -23,6 +24,7 @@ class UpdateCarRequest extends FormRequest
      */
     public function rules()
     {
+        # TODO: validation rules
         return [
             //
         ];

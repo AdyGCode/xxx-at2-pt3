@@ -15,7 +15,8 @@ return [
     |
     */
 
-    //'default' => env('DB_CONNECTION', 'mysql'),
+    # Leaving the default to MySQL, but you may change to mongodb
+    # TODO: optional - change default mysql to mongodb
     'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
@@ -94,6 +95,7 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
+        # TODO: Add these lines if missing (remove this TODO once complete)
         'mongodb' => [
             'driver' => 'mongodb',
             'url' => env('MONGO_URL'),

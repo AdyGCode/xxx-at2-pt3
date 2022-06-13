@@ -19,6 +19,7 @@
                                 :active="request()->routeIs('collectors*')">
                         {{ __('Collectors') }}
                     </x-nav-link>
+                    {{-- TODO: update the card link to be to the cars.index--}}
                     <x-nav-link :href="route('dashboard')"
                                 :active="request()->routeIs('cars*')">
                         {{ __('Cars') }}

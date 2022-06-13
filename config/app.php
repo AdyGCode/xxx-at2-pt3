@@ -185,6 +185,8 @@ return [
         /*
          * Package Service Providers...
          */
+
+        # TODO: Make sure that the Jensseggers MongoDB Service is linked here
         Jenssegers\Mongodb\MongodbServiceProvider::class,
 
         /*
