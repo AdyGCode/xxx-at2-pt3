@@ -19,7 +19,7 @@
                     <div class="flex w-full my-6 ">
                         <div class="w-32 pt-2"></div>
                         <h3 class="flex-1 text-xl">
-                            {{ __('Collector Details') }}
+                            {{ __('Delete Collector') }}
                         </h3>
                     </div>
 
@@ -50,34 +50,39 @@
                     </div>
 
 
-                    <div class="flex w-full my-6 gap-4">
-                        <p for="" class="w-32"></p>
+                    <form class="flex w-full my-6 gap-4" method="post"
+                          action="{{ route('collectors.destroy', $collector->id) }}">
 
-                        <a href="{{ route('collectors.index') }}"
-                           class="-ml-4 rounded text-center w-24 p-2
-                               bg-stone-500 text-stone-100 border border-stone-50 shadow-md
-                               hover:bg-stone-100 hover:border-stone-500 hover:text-stone-500 hover:shadow-sm
-                               transition ease-in-out duration-500">
-                            Back
-                        </a>
+                        @csrf
+                        @method('DELETE')
+
+                        <p class="w-32"></p>
 
                         <a href="{{ route('collectors.edit', $collector->id) }}"
-                           class="rounded w-24  p-2 text-center
+                           class="-ml-4 rounded w-24 p-2 text-center
                                     bg-amber-500 text-amber-100 border border-amber-50 shadow-md
                                     hover:bg-amber-100 hover:border-amber-500 hover:text-amber-500 hover:shadow-sm
                                     transition ease-in-out duration-500">
                             Edit
                         </a>
 
-                        <a href="{{ route('collectors.delete', $collector->id) }}"
-                           class="rounded text-center w-24 p-2
+                        <button type="submit"
+                                class="rounded text-center w-24 p-2
                                bg-red-500 text-red-100 border border-red-50 shadow-md
                                hover:bg-red-100 hover:border-red-500 hover:text-red-500 hover:shadow-sm
                                transition ease-in-out duration-500">
                             Delete
+                        </button>
+
+                        <a href="{{ route('collectors.index') }}"
+                           class="rounded text-center w-24 p-2
+                               bg-stone-500 text-stone-100 border border-stone-50 shadow-md
+                               hover:bg-stone-100 hover:border-stone-500 hover:text-stone-500 hover:shadow-sm
+                               transition ease-in-out duration-500">
+                            Back
                         </a>
 
-                    </div>
+                    </form>
 
                 </div>
             </div>

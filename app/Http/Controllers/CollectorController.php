@@ -81,14 +81,23 @@ class CollectorController extends Controller
      * @param \App\Models\Collector $collectors
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCollectorRequest $request, Collector $collectors)
+    public function update(UpdateCollectorRequest $request, Collector $collector)
     {
         // Validation code in Requests/StoreCollectorRequest.php
-        $collectors->given_name = $request->given_name;
-        $collectors->family_name = $request->family_name;
-        $collectors->cars = $request->cars;
-        $collectors->update();
-        ddd($collectors);
+
+        $collector->update([
+            "given_name" => $request->given_name ?? $collector->given_name,
+            "family_name" => $request->family_name ?? $collector->family_name,
+            "cars" => $request->cars ?? [],
+        ]);
+
+        /*  Use the above or the statements below to do the updates:
+            $collector->given_name = $request->given_name ?? $collector->given_name;
+            $collector->family_name = $request->family_name ?? $collector->family_name;
+            $collector->cars = $request->cars ?? [];
+            $collector->save();
+         */
+
         return redirect()->route('collectors.index')
             ->with('success', 'Collector successfully updated');
     }
@@ -99,9 +108,9 @@ class CollectorController extends Controller
      * @param \App\Models\Collector $collectors
      * @return \Illuminate\Http\Response
      */
-    public function delete(Collector $collectors)
+    public function delete(Collector $collector)
     {
-        //
+        return view("collectors.delete", compact(['collector']));
     }
 
     /**
@@ -110,8 +119,10 @@ class CollectorController extends Controller
      * @param \App\Models\Collector $collectors
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Collector $collectors)
+    public function destroy(Collector $collector)
     {
-        //
+        $collector->delete();
+        return redirect()->route('collectors.index')
+            ->with('success', 'Collector successfully deleted');
     }
 }
