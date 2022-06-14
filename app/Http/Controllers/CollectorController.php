@@ -29,7 +29,7 @@ class CollectorController extends Controller
             $collectors = Collector::where('family_name', 'like', "%{$searchFor}%")->paginate(10);
         }
 
-        return view("collectors.index", compact(['collectors']));
+        return view("collectors.index", compact(['collectors', 'searchFor']));
     }
 
     /**

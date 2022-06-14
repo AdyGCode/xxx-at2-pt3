@@ -29,7 +29,7 @@
                             Clear</p>
                         <input id="output"
                                class="relative text-sm leading-none text-gray-600 bg-white rounded lg:max-w-[452px] w-full px-10 py-4 outline-none"
-                               type="text" name="search" placeholder="Search for...">
+                               type="text" name="search" placeholder="Search for..." value="{{$searchFor??''}}">
                     </div>
                 </form>
 
@@ -38,8 +38,8 @@
     </x-slot>
 
     <!-- Main Content -->
-
-    <table class="table w-full rounded-md overflow-hidden border border-stone-800">
+    @if(count($collectors??[])>0)
+        <table class="table w-full rounded-md overflow-hidden border border-stone-800">
         <thead class="bg-stone-700 text-stone-100">
         <tr class="gap-2 ">
             <th class="bg-stone-700 text-left py-2 px-2 mx-2">#</th>
@@ -100,14 +100,17 @@
             </tr>
         @endforeach
         </tbody>
-        <tfoot>
-        <tr>
-            <td colspan="5" class="p-2">
-                {{ $collectors->links() }}
-            </td>
-        </tr>
-        </tfoot>
-    </table>
+            <tfoot>
+            <tr>
+                <td colspan="5" class="p-2">
+                    {{ $collectors->links() }}
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    @else
+        <p>No collectors found</p>
+    @endif
 
     <script>
         function eraseText() {
