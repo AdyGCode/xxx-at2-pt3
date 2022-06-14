@@ -40,66 +40,66 @@
     <!-- Main Content -->
     @if(count($collectors??[])>0)
         <table class="table w-full rounded-md overflow-hidden border border-stone-800">
-        <thead class="bg-stone-700 text-stone-100">
-        <tr class="gap-2 ">
-            <th class="bg-stone-700 text-left py-2 px-2 mx-2">#</th>
-            <th class="bg-stone-700 text-left py-2 px-2 mx-2">{{ __('Given Name') }}</th>
-            <th class="bg-stone-700 text-left py-2 px-2 mx-2">{{ __('Family Name') }}</th>
-            <th class="bg-stone-700 text-left py-2 px-2 mx-2">{{ __('Cars Owned') }}</th>
-            <th class="bg-stone-700 text-right py-2 pr-4 mx-2">{{ __('Actions') }}</th>
-        </tr>
-        </thead>
-        <tbody class="">
-        @foreach ($collectors as $key=>$collector)
-            <tr class="gap-2 border border-stone-500
+            <thead class="bg-stone-700 text-stone-100">
+            <tr class="gap-2 ">
+                <th class="bg-stone-700 text-left py-2 px-2 mx-2">#</th>
+                <th class="bg-stone-700 text-left py-2 px-2 mx-2">{{ __('Given Name') }}</th>
+                <th class="bg-stone-700 text-left py-2 px-2 mx-2">{{ __('Family Name') }}</th>
+                <th class="bg-stone-700 text-left py-2 px-2 mx-2">{{ __('Cars Owned') }}</th>
+                <th class="bg-stone-700 text-right py-2 pr-4 mx-2">{{ __('Actions') }}</th>
+            </tr>
+            </thead>
+            <tbody class="">
+            @foreach ($collectors as $key=>$collector)
+                <tr class="gap-2 border border-stone-500
                        hover:bg-stone-200 hover:border-b-1 hover:border-stone-500
                        transition ease-in-out">
-                <td class="px-2 py-1">{{ $key+1 }}</td>
-                <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis
+                    <td class="px-2 py-1">{{ $key+1 }}</td>
+                    <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis
                 overflow-hidden">
-                    {{ Str::of($collector->given_name)->limit(24) }}
-                </td>
-                <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis overflow-hidden">
-                    {{ Str::of($collector->family_name)->limit(24) }}
-                </td>
-                <td class="w-2/12 text-left px-2 py-1">{{ count($collector->cars??[])
+                        {{ Str::of($collector->given_name)->limit(24) }}
+                    </td>
+                    <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis overflow-hidden">
+                        {{ Str::of($collector->family_name)->limit(24) }}
+                    </td>
+                    <td class="w-2/12 text-left px-2 py-1">{{ count($collector->cars??[])
                 }}</td>
-                <td class="px-2 py-1">
-                    <div class="flex justify-end gap-1">
+                    <td class="px-2 py-1">
+                        <div class="flex justify-end gap-1">
 
-                        <a href="{{ route('collectors.show', $collector->id) }}"
-                           class="px-2 py-1 rounded text-center w-16
+                            <a href="{{ route('collectors.show', $collector->id) }}"
+                               class="px-2 py-1 rounded text-center w-16
                                   bg-emerald-500 text-emerald-100 border border-emerald-50
                                   hover:bg-emerald-100 hover:border-emerald-500 hover:text-emerald-700 hover:shadow-inner
                                   hover:shadow-sm hover:shadow-emerald-900
                                   transition ease-in-out duration-500">
-                            {{ __('View') }}
-                        </a>
+                                {{ __('View') }}
+                            </a>
 
-                        <a href="{{ route('collectors.edit', $collector->id) }}"
-                           class="px-2 py-1 rounded text-center w-16
+                            <a href="{{ route('collectors.edit', $collector->id) }}"
+                               class="px-2 py-1 rounded text-center w-16
                                   bg-sky-500 text-sky-100 border border-sky-50
                                   hover:bg-sky-100 hover:border-sky-500 hover:text-sky-700 hover:shadow-inner
                                   hover:shadow-sm hover:shadow-sky-900
                                   transition ease-in-out duration-500">
-                            {{ __('Edit') }}
-                        </a>
+                                {{ __('Edit') }}
+                            </a>
 
 
-                        <a href="{{ route('collectors.delete', $collector->id) }}"
-                           class="px-2 py-1 rounded text-center w-16
+                            <a href="{{ route('collectors.delete', $collector->id) }}"
+                               class="px-2 py-1 rounded text-center w-16
                                                   bg-red-50 text-red-500 border border-red-500
                                                   hover:bg-red-500 hover:border-red-500 hover:text-red-50 hover:shadow-inner
                                                   hover:shadow-red-900
                                                   transition ease-in-out duration-500">
-                            {{ __('Delete') }}
-                        </a>
+                                {{ __('Delete') }}
+                            </a>
 
-                    </div>
-                </td>
-            </tr>
-        @endforeach
-        </tbody>
+                        </div>
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
             <tfoot>
             <tr>
                 <td colspan="5" class="p-2">

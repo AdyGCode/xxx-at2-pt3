@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="flex">
             <h2 class="flex-1 font-semibold text-xl text-gray-800 leading-tight">
-{{--                {{ __('Collectors') }}--}}
+                {{--                {{ __('Collectors') }}--}}
             </h2>
             <a href="{{ route('collectors.create') }}"
                class="flex-0 rounded text-stone-100 bg-stone-500 p-1 mx-2">
