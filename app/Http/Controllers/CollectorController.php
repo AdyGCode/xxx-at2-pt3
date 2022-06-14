@@ -6,6 +6,7 @@ use App\Http\Requests\StoreCollectorRequest;
 use App\Http\Requests\UpdateCollectorRequest;
 use App\Models\Car;
 use App\Models\Collector;
+use Illuminate\Http\Request;
 
 class CollectorController extends Controller
 {
@@ -16,7 +17,18 @@ class CollectorController extends Controller
      */
     public function index()
     {
-        $collectors = Collector::paginate(10);
+        # Grab current request and extract a search term from URL
+        $request = Request()->all();
+        $searchFor = $request['search'] ?? '';
+
+        # If the search term is blank/non-existent then return all (paginated)
+        # otherwise use where like to do partial (and case-insensitive) matching
+        if ($searchFor === "") {
+            $collectors = Collector::paginate(10);
+        } else {
+            $collectors = Collector::where('family_name', 'like', "%{$searchFor}%")->paginate(10);
+        }
+
         return view("collectors.index", compact(['collectors']));
     }
 

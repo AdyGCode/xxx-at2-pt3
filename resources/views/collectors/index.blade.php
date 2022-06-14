@@ -9,6 +9,11 @@
                    class="flex-0 rounded text-stone-100 bg-stone-500 p-1 mx-2">
                     {{ __("Add Collector") }}
                 </a>
+                <form method="get" action="{{ route('collectors.index')}}">
+                    <label for="search">Search:</label>
+                    <input type="text" id="search" name="search" placeholder="Enter search term">
+                    <button type="submit" name="go">GO!</button>
+                </form>
             </div>
         </div>
     </x-slot>
