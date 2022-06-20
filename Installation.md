@@ -265,6 +265,10 @@ Check the files named below, or in each of the following folders to see which ha
 - app/Http/Controllers
 - app/Models
 
+# Vital changes in code
+
+Make sure that the Models use the Jenssegger's
+
 # TO DO
 
 Look for the TODO in code that is not part of the vendor or node_modules.
