@@ -62,7 +62,7 @@
                     <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis overflow-hidden">
                         {{ Str::of($collector->family_name)->limit(24) }}
                     </td>
-                    <td class="w-2/12 text-left px-2 py-1">{{ count($collector->cars??[])
+                    <td class="w-2/12 text-left px-2 py-1">{{ count($collector->cars->toArray()??[])
                 }}</td>
                     <td class="px-2 py-1">
                         <div class="flex justify-end gap-1">

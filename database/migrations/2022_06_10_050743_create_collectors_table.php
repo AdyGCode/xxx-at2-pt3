@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->id();
             $table->string('given_name', 128)->nullable();
             $table->string('family_name', 192);
-            $table->json('cars')->nullable();
+//            $table->json('cars')->nullable();
             $table->timestamps();
         });
     }

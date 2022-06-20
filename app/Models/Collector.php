@@ -39,4 +39,9 @@ class Collector extends Model
     protected $casts = [];
 
 
+    public function cars()
+    {
+        return $this->hasMany(Car::class);
+    }
+
 }

@@ -15,5 +15,11 @@ class Car extends Model
     use HasFactory;
 
     # Name the collection 'table' for MongoDB
+    protected $collection = "cars";
+
+    public function collectors()
+    {
+        $this->belongsToMany(Collector::class);
+    }
 
 }

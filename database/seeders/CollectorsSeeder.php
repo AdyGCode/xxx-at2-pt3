@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Car;
+use App\Models\CarCollector;
 use App\Models\Collector;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class CollectorsSeeder extends Seeder
@@ -248,9 +249,21 @@ class CollectorsSeeder extends Seeder
 
         shuffle($collectors);
 
+        $countItems = count($collectors);
+        $this->command->getOutput()->writeln("<info>Seeding {$countItems} Collectors.");
+
         foreach ($collectors as $collector) {
-            Collector::create($collector);
+            $newCollector = [
+                "given_name" => $collector['given_name'],
+                "family_name" => $collector['family_name'],
+            ];
+            $theCollector = Collector::create($newCollector);
+            foreach ($collector['cars'] as $car) {
+                $carDetails = Car::where('code', $car)->first();
+                CarCollector::create(['car_id' => $carDetails->id, 'collector_id' => $theCollector->id]);
+            }
         }
+
     }
 
 

@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -22,7 +21,7 @@ class UsersSeeder extends Seeder
                 'name' => 'Ad Ministrator',
                 'email' => 'ad.ministrator@example.com',
                 'email_verified_at' => now(),
-                'password' => Hash::make('Password1'),
+                'password' => 'Password1',
                 'created_at' => now(),
                 'timezone' => 'Australia/Perth',
             ],
@@ -32,7 +31,7 @@ class UsersSeeder extends Seeder
                 'name' => 'YOUR NAME',
                 'email' => 'GIVEN@example.com',
                 'email_verified_at' => now(),
-                'password' => Hash::make('Password1'),
+                'password' => 'Password1',
                 'created_at' => now(),
                 'timezone' => 'Australia/Perth',
             ],
@@ -41,7 +40,7 @@ class UsersSeeder extends Seeder
                 'name' => 'Andy Manager',
                 'email' => 'andy.manager@example.com',
                 'email_verified_at' => now(),
-                'password' => Hash::make('Password1'),
+                'password' => 'Password1',
                 'created_at' => now(),
                 'timezone' => 'Australia/Perth',
             ],
@@ -51,7 +50,7 @@ class UsersSeeder extends Seeder
                 'name' => 'Eileen Dover',
                 'email' => 'eileen@example.com',
                 'email_verified_at' => now(),
-                'password' => Hash::make('Password1'),
+                'password' => 'Password1',
                 'created_at' => now(),
                 'timezone' => 'Australia/Perth',
             ],
@@ -60,7 +59,7 @@ class UsersSeeder extends Seeder
                 'name' => 'Jacques d\'Carre',
                 'email' => 'jacques@example.com',
                 'email_verified_at' => now(),
-                'password' => Hash::make('Password1'),
+                'password' => 'Password1',
                 'created_at' => now(),
                 'timezone' => 'Europe/Paris',
             ],
@@ -69,7 +68,7 @@ class UsersSeeder extends Seeder
                 'name' => 'Russell Leaves',
                 'email' => 'russell@example.com',
                 'email_verified_at' => now(),
-                'password' => Hash::make('Password1'),
+                'password' => 'Password1',
                 'created_at' => now(),
                 'timezone' => 'Pacific/Pitcairn',
             ],
@@ -78,7 +77,7 @@ class UsersSeeder extends Seeder
                 'name' => 'Ivana Vinn',
                 'email' => 'ivanna@example.com',
                 'email_verified_at' => now(),
-                'password' => Hash::make('Password1'),
+                'password' => 'Password1',
                 'created_at' => now(),
                 'timezone' => 'Europe/Moscow',
             ],
@@ -87,7 +86,7 @@ class UsersSeeder extends Seeder
                 'name' => 'Win Doh',
                 'email' => 'win@example.com',
                 'email_verified_at' => now(),
-                'password' => Hash::make('Password1'),
+                'password' => 'Password1',
                 'created_at' => now(),
                 'timezone' => 'Europe/Sofia',
             ],
@@ -96,7 +95,7 @@ class UsersSeeder extends Seeder
                 'name' => 'Rusty Nails',
                 'email' => 'Rusty.Nails@example.com',
                 'email_verified_at' => now(),
-                'password' => Hash::make('Password1'),
+                'password' => 'Password1',
                 'created_at' => now(),
                 'timezone' => '',
             ],
@@ -105,13 +104,19 @@ class UsersSeeder extends Seeder
                 'name' => 'Preston Cleaned',
                 'email' => 'Preston.Cleaned@example.com',
                 'email_verified_at' => now(),
-                'password' => Hash::make('Password1'),
+                'password' => 'Password1',
                 'created_at' => now(),
                 'timezone' => '',
             ],
         ];
 
+        shuffle($seedUsers);
+
+        $countItems = count($seedUsers);
+        $this->command->getOutput()->writeln("<info>Seeding with {$countItems} Users.");
+
         foreach ($seedUsers as $seed) {
+            $seed['password'] = Hash::make($seed['password']);
             $user = User::create($seed);
         }
 
