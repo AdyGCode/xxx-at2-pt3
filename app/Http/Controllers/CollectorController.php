@@ -26,7 +26,9 @@ class CollectorController extends Controller
         if ($searchFor === "") {
             $collectors = Collector::paginate(10);
         } else {
-            $collectors = Collector::where('family_name', 'like', "%{$searchFor}%")->paginate(10);
+            $collectors = Collector::where('family_name', 'like', "%{$searchFor}%")
+                ->orWhere('given_name', 'like', "%{$searchFor}%")
+                ->paginate(10);
         }
 
         return view("collectors.index", compact(['collectors', 'searchFor']));

@@ -5330,13 +5330,13 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
             /* harmony import */
             var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 
+
             window._ = (lodash__WEBPACK_IMPORTED_MODULE_0___default());
             /**
              * We'll load the axios HTTP library which allows us to easily issue requests
              * to our Laravel back-end. This library automatically handles sending the
              * CSRF token as a header based on the value of the "XSRF" token cookie.
              */
-
 
             window.axios = (axios__WEBPACK_IMPORTED_MODULE_1___default());
             window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
