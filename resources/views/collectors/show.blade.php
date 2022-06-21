@@ -41,7 +41,7 @@
         <p class="w-32 text-stone-500">{{ __('Cars Owned') }}</p>
         <p class="flex-1 flex -ml-1 text-sm gap-1">
             @foreach($collector->cars as $car)
-                <span class="p-1 px-2 rounded-full bg-stone-200 text-900">{{ $car }}</span>
+                <span class="p-1 px-2 rounded-full bg-stone-200 text-900">{{$car->code}}</span>
             @endforeach
         </p>
     </div>
