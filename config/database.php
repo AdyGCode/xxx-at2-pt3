@@ -98,7 +98,7 @@ return [
         # TODO: Add these lines if missing (remove this TODO once complete)
         'mongodb' => [
             'driver' => 'mongodb',
-            'url' => env('MONGO_URL'),
+            'url' => env('MONGO_URI'),
             'host' => env('MONGO_HOST', 'localhost'),
             'port' => env('MONGO_PORT', '27017'),
             'database' => env('MONGO_DATABASE', 'forge'),
