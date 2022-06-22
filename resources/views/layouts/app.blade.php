@@ -53,9 +53,8 @@
                     <div class="p-6 bg-white border-b border-gray-200">
                         {{ $slot }}
                     </div>
-                    <div>
-                        <p>Version: {{ config('app.version', '0') }}</p>
-                        <p>Date: ...</p>
+                    <div class="flex px-6 py-2 text-stone-300">
+                        Application Version: {{ env('APP_VERSION', '0') }}
                     </div>
                 </div>
             </div>
