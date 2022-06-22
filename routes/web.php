@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CollectorController;
 use App\Http\Controllers\PagesController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
+
+/* Reset site - calls custom artisan command */
+Route::get('/reset', function () {
+    Artisan::call("site:reset");
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

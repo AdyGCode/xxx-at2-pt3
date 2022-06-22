@@ -35,6 +35,9 @@ class AppServiceProvider extends ServiceProvider
          *             $this->app['request']->server->set('HTTPS', true);
          * }
          */
-        $this->app['request']->server->set('HTTPS', true);
+
+        if (request()->getRequestUri() != '/health' && $this->app->environment('production')) {
+            $this->app['request']->server->set('HTTPS', true);
+        }
     }
 }
