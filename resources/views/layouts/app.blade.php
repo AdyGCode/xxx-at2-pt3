@@ -53,6 +53,10 @@
                     <div class="p-6 bg-white border-b border-gray-200">
                         {{ $slot }}
                     </div>
+                    <div>
+                        <p>Version: {{ config('app.version', '0') }}</p>
+                        <p>Date: ...</p>
+                    </div>
                 </div>
             </div>
         </div>
