@@ -19,7 +19,12 @@ class CollectorController extends Controller
     {
         # Grab current request and extract a search term from URL
         $request = Request()->all();
+        $clear = $request['clear'] ?? '';
         $searchFor = $request['search'] ?? '';
+
+        if ($clear) {
+            $searchFor = "";
+        }
 
         # If the search term is blank/non-existent then return all (paginated)
         # otherwise use where like to do partial (and case-insensitive) matching

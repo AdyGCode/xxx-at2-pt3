@@ -23,10 +23,14 @@
                                 fill="#4B5563"/>
                         </svg>
 
+{{--                        <button onclick="eraseText();" type="submit" name="clear"--}}
+{{--                                class="absolute z-20 text-xs font-medium leading-3 text-gray-600 underline right-4 top-[18px] cursor-pointer">--}}
+{{--                            Clear</button>--}}
 
                         <p onclick="eraseText();"
                            class="absolute z-20 text-xs font-medium leading-3 text-gray-600 underline right-4 top-[18px] cursor-pointer">
                             Clear</p>
+
                         <input id="output"
                                class="relative text-sm leading-none text-gray-600 bg-white rounded lg:max-w-[452px] w-full px-10 py-4 outline-none"
                                type="text" name="search" placeholder="Search for..." value="{{$searchFor??''}}">
