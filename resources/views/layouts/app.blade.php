@@ -53,13 +53,13 @@
                     <div class="p-6 bg-white border-b border-gray-200">
                         {{ $slot }}
                     </div>
-                    <div class="flex px-6 py-2 text-stone-200 text-sm">
-                        Application Version: {{ env('APP_VERSION', '0') }}
-                    </div>
                 </div>
             </div>
         </div>
     </main>
+
+    @include('layouts.footer')
+
 </div>
 </body>
 </html>
