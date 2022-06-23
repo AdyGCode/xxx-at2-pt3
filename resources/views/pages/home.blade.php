@@ -12,9 +12,9 @@
                 <div class="p-6 bg-white border-b border-gray-200 flex flex-center gap-8">
 
                     <div class="bg-stone-50 rounded flex-1 rounded-2xl shadow-lg border-emerald-800 border border-1
-                    overflow-hidden mx-0">
-                        <div class="flex justify-between gap-4 overflow-hidden">
-                            <p class="-z-10 -ml-8 mt-1 overflow-hidden absolute">
+                    overflow-clipped mx-0">
+                        <div class="flex justify-between gap-4 ">
+                            <p class="-z-10 -ml-8 mt-1 absolute">
                                 <i class="fa fa-solid fa-car-side text-6xl lg:text-6xl text-emerald-500"></i>
                             </p>
                             <div class="justify-right h-max p-3 overflow-hidden text-emerald-700 font-black text-3xl
