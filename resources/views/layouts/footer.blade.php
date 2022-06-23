@@ -1,12 +1,22 @@
-<footer class="text-center text-white" style="background-color: #0a4275;">
-    <div class="container p-6">
-        <p class="justify-center items-centertext-stone-200 text-sm">
-            Application Version: {{ env('APP_VERSION', '0') }}
+<footer class="w-full text-white bg-sky-800 mt-8 center">
+    <div class="px-4 sm:px-6 lg:px-12 py-2 grid grid-cols-2 text-stone-200 text-sm">
+        <p class="text-start">
+            Application Version: {{ env('APP_VERSION', '0.0.0') }}
+        </p>
+        <p class="text-end">
+            © 2022 Copyright:
+            <a class="text-white" href="">Adrian Gould</a>
         </p>
     </div>
 
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2021 Copyright:
-        <a class="text-white" href="">Adrian Gould</a>
+    <div class="p-4 sm:px-6 lg:px-12 pb-6 bg-sky-900 flex justify-items-center text-center ">
+        <p class="flex-1 text-stone-200 text-xs md:text-sm">
+            This application is written as part of
+            <br class="md:hidden">
+            the learning materials for developing
+            <br class="lg:hidden">
+            software as a service, API, and
+            NoSQL technologies.
+        </p>
     </div>
 </footer>
