@@ -35,7 +35,7 @@
                                         phpMyAdmin
                                     </a>
                                 </p>
-                                <p class="p-2 col-span-2">http://localhost:8025</p>
+                                <p class="p-2 col-span-2">http://localhost:8081</p>
                                 <p class="col-span-3 p-2 ">MariaDB / MySQL Web Admin.
                                     Login Details are as given below:
                                     <br>
