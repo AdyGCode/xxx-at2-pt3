@@ -13,11 +13,12 @@
 
                     <div class="bg-stone-50 rounded flex-1 rounded-2xl shadow-lg border-emerald-800 border border-1
                     overflow-hidden mx-0">
-                        <div class="flex justify-between gap-4 overflow-clipped">
-                            <p class="-z-5 -ml-8 mt-1 overflow-clipped absolute">
+                        <div class="flex justify-between gap-4 overflow-hidden">
+                            <p class="-z-10 -ml-8 mt-1 overflow-hidden absolute">
                                 <i class="fa fa-solid fa-car-side text-6xl lg:text-6xl text-emerald-500"></i>
                             </p>
-                            <div class="h-max p-3 overflow-hidden text-emerald-700 font-black text-3xl lg:text-6xl ">
+                            <div class="justify-right h-max p-3 overflow-hidden text-emerald-700 font-black text-3xl
+                            lg:text-6xl ">
                                 {{-- TODO: make sure no random number added to the cars here --}}
                                 {{ $cars + rand(1,9999) }}
                             </div>
