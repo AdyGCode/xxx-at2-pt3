@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
+Route::get('/about', [PagesController::class, 'about'])->name('about');
 
 /* Reset site - calls custom artisan command */
 Route::get('/reset', function () {

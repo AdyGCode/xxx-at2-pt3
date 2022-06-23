@@ -24,5 +24,10 @@ class PagesController extends Controller
         return view("pages.home", compact(['collectors', 'cars', 'users']));
     }
 
+    public function about()
+    {
+        return view("pages.about");
+    }
+
 
 }
