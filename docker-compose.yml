@@ -91,6 +91,17 @@ services:
             - PMA_ARBITRARY=1
         depends_on:
             - mariadb
+    hue:
+        image: gethue/hue:latest
+        restart: always
+        ports:
+            - '8888:8888'
+        networks:
+            - sail
+        depends_on:
+            - mariadb
+        volumes:
+            - 'hue:/usr/share/hue/desktop/conf/'
     redis:
         image: 'redis:alpine'
         ports:
@@ -174,4 +185,6 @@ volumes:
     mongodb:
         driver: local
     mongoconfig:
+        driver: local
+    hue:
         driver: local
