@@ -17,7 +17,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body class="font-sans antialiased">
-<div class="min-h-screen bg-gray-100">
+<div class="min-h-screen bg-gray-100 flex flex-col">
     @include('layouts.navigation')
 
     <!-- Page Heading -->
@@ -30,7 +30,7 @@
     @endif
 
     <!-- Page Content -->
-    <main>
+    <main class="flex-grow">
         @if ($message = Session::get('success'))
             <div class="mt-12 mb-4">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
