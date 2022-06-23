@@ -17,7 +17,7 @@
                             <p>
                                 <i class="fa fa-solid fa-car-side text-6xl text-emerald-500 ml-4 pt-6"></i>
                             </p>
-                            <div class="h-max p-3 overflow-hidden text-emerald-700 font-black text-6xl ">
+                            <div class="h-max p-3 overflow-hidden text-emerald-700 font-black text-3xl lg:text-6xl ">
                                 {{-- TODO: make sure no random number added to the cars here --}}
                                 {{ $cars + rand(1,9999) }}
                             </div>
@@ -35,7 +35,7 @@
                             <p>
                                 <i class="fa fa-solid fa-address-book text-6xl text-rose-500 ml-4 pt-6"></i>
                             </p>
-                            <div class="h-max p-3 overflow-hidden text-rose-700 font-black text-6xl ">
+                            <div class="h-max p-3 overflow-hidden text-rose-700 font-black text-3xl lg:text-6xl ">
                                 {{ $collectors }}
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                             <p>
                                 <i class="fa fa-solid fa-user text-6xl text-indigo-500 ml-4 pt-6"></i>
                             </p>
-                            <div class="h-max p-3 overflow-hidden text-indigo-700 font-black text-6xl ">
+                            <div class="h-max p-3 overflow-hidden text-indigo-700 font-black text-3xl lg:text-6xl ">
                                 {{ $users }}
                             </div>
                         </div>
