@@ -11,12 +11,9 @@
 
     <div class="p-4 sm:px-6 lg:px-12 pb-6 bg-sky-900 flex justify-items-center text-center ">
         <p class="flex-1 text-stone-200 text-xs md:text-sm">
-            This application is written as part of
-            <br class="md:hidden">
-            the learning materials for developing
-            <br class="lg:hidden">
-            software as a service, API, and
-            NoSQL technologies.
+            This application is written as part of <br class="md:hidden">
+            the learning materials for developing <br class="lg:hidden">
+            software as a service, API, and NoSQL technologies.
         </p>
     </div>
 </footer>
