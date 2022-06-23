@@ -13,7 +13,7 @@
 
                     <div class="bg-stone-50 rounded flex-1 rounded-2xl shadow-lg border-emerald-800 border border-1
                     overflow-clipped mx-0">
-                        <div class="flex justify-between gap-4 ">
+                        <div class="">
                             <p class="-z-10 -ml-8 mt-1 absolute">
                                 <i class="fa fa-solid fa-car-side text-6xl lg:text-6xl text-emerald-500"></i>
                             </p>
