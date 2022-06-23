@@ -6879,11 +6879,9 @@ select {
 .z-50 {
     z-index: 50;
 }
-
 .z-20 {
     z-index: 20;
 }
-
 .-z-10 {
     z-index: -10;
 }
@@ -6891,6 +6889,11 @@ select {
 .m-0 {
     margin: 0px;
 }
+
+.-m-4 {
+    margin: -1rem;
+}
+
 .mx-2 {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
