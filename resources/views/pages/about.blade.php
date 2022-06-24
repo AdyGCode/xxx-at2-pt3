@@ -65,12 +65,20 @@
                                 </p>
                                 <p class="p-2 col-span-2">http://localhost:8083</p>
                                 <p class="col-span-3 p-2 ">
-                                    <em class="text-red-700">
-                                        Redis Commander is still being configured for this docker setup.
-                                    </em>
-                                    <br>
                                     <strong>Redis</strong> is an open Source in-memory data structure store, used as a
                                     distributed, in-memory key–value database, cache and message broker. </p>
+                            </div>
+                            <div class="grid grid-cols-7 border-b border-stone-500">
+                                <p class="col-span-2">
+                                    <a href="http://localhost:8085" target="_blank"
+                                       class="w-full  p-2 block hover:bg-stone-800 hover:text-stone-100">
+                                        Memcached Admin
+                                    </a>
+                                </p>
+                                <p class="p-2 col-span-2">http://localhost:8085</p>
+                                <p class="col-span-3 p-2 ">
+                                    <strong>Memcached</strong> in-memory key-value store for small chunks of arbitrary data
+                                    (strings, objects) from results of database calls, API calls, or page rendering. </p>
                             </div>
                             <div class="grid grid-cols-7 border-b border-stone-500">
                                 <p class="col-span-2">
