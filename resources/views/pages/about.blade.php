@@ -22,6 +22,7 @@
                             that includes: <abbr title="Browse Read Edit Add Delete">BREAD</abbr> /
                             <abbr title="Create Read Update Delete">CRUD</abbr> methods, styling the user interface, and more.
                            </p>
+                        <p>This site is running as {{env('APP_ENV')}}</p>
                     </section>
 
                     <section class="mb-6">
