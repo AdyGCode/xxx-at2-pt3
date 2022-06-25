@@ -1,4 +1,5 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-zinc-800 text-zinc-100 border-b border-zinc-900 fixed top-0 z-30 w-full shadow
+shadow-zinc-500">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -6,12 +7,15 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('home') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600"/>
+                        <x-application-logo class="block h-10 w-auto fill-current text-sky-600 hover:text-sky-400"/>
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                        {{ __('Home') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
@@ -67,12 +71,12 @@
             @else
                 @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log
+                        <a href="{{ route('login') }}" class="text-sm text-gray-100 dark:text-gray-50  underline">Log
                             in</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}"
-                               class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                               class="ml-4 text-sm text-gray-100 dark:text-gray-50 underline">Register</a>
                         @endif
                     </div>
                 @endif
