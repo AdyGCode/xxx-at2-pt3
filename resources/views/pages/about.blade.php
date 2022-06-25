@@ -21,8 +21,8 @@
                         <p class="pb-2">It contains a number of examples of how to create a variety of techniques and code
                             that includes: <abbr title="Browse Read Edit Add Delete">BREAD</abbr> /
                             <abbr title="Create Read Update Delete">CRUD</abbr> methods, styling the user interface, and more.
-                           </p>
-                        <p>This site is running as {{env('APP_ENV')}}</p>
+                        </p>
+                        <p>This site is running in {{ env('APP_ENV')==="local"?'development':'production'}}.</p>
                     </section>
 
                     <section class="mb-6">

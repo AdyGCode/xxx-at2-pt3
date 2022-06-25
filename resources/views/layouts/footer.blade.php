@@ -1,7 +1,8 @@
 <footer class="w-full text-white bg-sky-800 mt-8 center">
     <div class="px-4 sm:px-6 lg:px-12 py-2 grid grid-cols-2 text-stone-200 text-sm">
         <p class="text-start">
-            Application Version: {{ env('APP_VERSION', '0.0.0') }}
+            {{ env('APP_ENV')==="local"?'Development':'Production'}}
+            version: {{ env('APP_VERSION', '0.0.0') }}
         </p>
         <p class="text-end">
             © 2022 Copyright:
