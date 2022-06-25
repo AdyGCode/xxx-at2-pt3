@@ -38,53 +38,49 @@
                         <p class="pb-2">Information on the requirements for this sample code are shown in the ReadMe based
                             documents.</p>
                         <p class="pb-2">Repository: <a href="http://github.com/AdyGCode/xxx-saas-laravel-mongodb-demo">
-                                http://github.com/AdyGCode/xxx-saas-laravel-mongodb-demo
+                                https://github.com/AdyGCode/xxx-saas-laravel-mongodb-demo
                             </a>.</p>
                     </section>
 
                     <section class="mb-6">
                         <h3 class="text-2xl pb-6">Development and Public Access</h3>
                         <div class="border border-stone-800">
-                            <div class="grid grid-cols-7 border border-b border-stone-800 bg-stone-800 text-stone-100">
-                                <p class="col-span-2 p-2">
+                            <div class="grid grid-cols-9 border border-b border-stone-800 bg-stone-800 text-stone-100">
+                                <p class="col-span-1 p-2">
                                     Version
                                 </p>
-                                <p class="p-2 col-span-2">Address</p>
-                                <p class="col-span-3 p-2 "></p>
+                                <p class="p-2 col-span-4">Address</p>
+                                <p class="col-span-4 p-2 "></p>
                             </div>
 
-                            <div class="grid grid-cols-7 border-b border-stone-500">
-                                <p class="col-span-2 ">
+                            <div class="grid grid-cols-9 border-b border-stone-500">
+                                <p class="col-span-1">
                                     <a href="http://localhost" target="_blank"
                                        class="w-full h-full p-2 block hover:bg-stone-800 hover:text-stone-100">
                                         Local Copy (No Sync)
                                     </a>
                                 </p>
-                                <p class="p-2 col-span-2">http://localhost</p>
-                                <p class="col-span-3 p-2  text-sm ">This copy runs on docker and does not have browser
-                                    refresh synchronisation.</p>
-                            </div>
-                            <div class="grid grid-cols-7 border-b border-stone-500">
-                                <p class="col-span-2 ">
-                                    <a href="http://localhost:3000" target="_blank"
-                                       class="w-full h-full p-2 block hover:bg-stone-800 hover:text-stone-100">
-                                        Local Copy (Sync)
-                                    </a>
+                                <p class="p-2 col-span-4  ">
+                                    <code class="text-emerald-700">http://<i></i>localhost</code>
                                 </p>
-                                <p class="p-2 col-span-2">http://localhost:3000</p>
-                                <p class="col-span-3 p-2  text-sm ">This copy runs on docker and has browser refresh sync when
-                                    used with <code>npm run watch</code>.</p>
+                                <p class="col-span-4 p-2 text-sm">This copy runs on docker. <br>Using <code
+                                        class="text-emerald-700">localhost</code> only will give no browser synchronisation.
+                                    Adding the port, <code class="text-emerald-700">:3000</code>, will add browser refresh sync
+                                    when in conjunction used with <code class="text-emerald-700">npm run watch</code>.</p>
                             </div>
-                            <div class="grid grid-cols-7 border-b border-stone-500">
-                                <p class="col-span-2 ">
+
+                            <div class="grid grid-cols-9 border-b border-stone-500">
+                                <p class="col-span-1">
                                     <a href="https://nmt-saas-at2-pt2.herokuapp.com" target="_blank"
                                        class="w-full h-full p-2 block hover:bg-stone-800 hover:text-stone-100">
                                         Public Copy
                                     </a>
                                 </p>
-                                <p class="p-2 col-span-2">https://nmt-saas-at2-pt2.herokuapp.com</p>
-                                <p class="col-span-3 p-2  text-sm ">This copy is hosted on Heroku.com and is a more complete
-                                    implementation</p>
+                                <p class="p-2 col-span-4">
+                                    <code class="text-emerald-700">https://nmt-saas-at2-pt2.herokuapp.com</code>
+                                </p>
+                                <p class="col-span-4 p-2  text-sm ">This copy is hosted on
+                                    <code class="text-emerald-700">Heroku.com</code> and is a more complete implementation</p>
                             </div>
                         </div>
                     </section>
@@ -96,22 +92,22 @@
                             file from this project, you may access the following administration interfaces for a variety of
                             services built into the docker-compose file:</p>
                         <div class="border border-stone-800">
-                            <div class="grid grid-cols-7 border border-b border-stone-800 bg-stone-800 text-stone-100">
-                                <p class="col-span-2 p-2">
+                            <div class="grid grid-cols-6 border border-b border-stone-800 bg-stone-800 text-stone-100">
+                                <p class="col-span-1 p-2">
                                     Service
                                 </p>
                                 <p class="p-2 col-span-2">Address</p>
                                 <p class="col-span-3 p-2 ">Notes</p>
                             </div>
 
-                            <div class="grid grid-cols-7 border-b border-stone-500 bg-amber-200">
-                                <p class="col-span-2 ">
+                            <div class="grid grid-cols-6 border-b border-stone-500 bg-amber-200">
+                                <p class="col-span-1">
                                     <a href="http://localhost" target="_blank"
                                        class="w-full h-full p-2 block hover:bg-stone-800 hover:text-stone-100">
                                         MongoDB Admin
                                     </a>
                                 </p>
-                                <p class="p-2 col-span-2">TODO: http://localhost:????</p>
+                                <p class="p-2 col-span-2">TODO: <code class="text-emerald-700">http://localhost:????</code></p>
                                 <p class="col-span-3 p-2 text-sm ">TODO: Locate and add a web-based free to use Web based
                                     MongoDB administration interface.<br>
                                     Server: <code class="text-emerald-700">mongodb</code>,
@@ -120,14 +116,14 @@
                                 </p>
                             </div>
 
-                            <div class="grid grid-cols-7 border-b border-stone-500">
-                                <p class="col-span-2 ">
+                            <div class="grid grid-cols-6 border-b border-stone-500">
+                                <p class="col-span-1">
                                     <a href="http://localhost:8081" target="_blank"
                                        class="w-full h-full p-2 block hover:bg-stone-800 hover:text-stone-100">
                                         phpMyAdmin
                                     </a>
                                 </p>
-                                <p class="p-2 col-span-2">http://localhost:8081</p>
+                                <p class="p-2 col-span-2"><code class="text-emerald-700">http://localhost:8081</code></p>
                                 <p class="col-span-3 p-2 text-sm ">MariaDB / MySQL Web Admin.<br>
 
                                     Server: <code class="text-emerald-700">mariadb</code>,
@@ -136,40 +132,40 @@
                                 </p>
                             </div>
 
-                            <div class="grid grid-cols-7 border-b border-stone-500">
-                                <p class="col-span-2 ">
+                            <div class="grid grid-cols-6 border-b border-stone-500">
+                                <p class="col-span-1">
                                     <a href="http://localhost:8025" target="_blank"
                                        class="w-full h-full p-2 block hover:bg-stone-800 hover:text-stone-100">
                                         Mailhog
                                     </a>
                                 </p>
-                                <p class="p-2 col-span-2">http://localhost:8025</p>
+                                <p class="p-2 col-span-2"><code class="text-emerald-700">http://localhost:8025</code></p>
                                 <p class="col-span-3 p-2 text-sm ">
                                     SMTP mail testing.
                                 </p>
                             </div>
 
-                            <div class="grid grid-cols-7 border-b border-stone-500">
-                                <p class="col-span-2">
+                            <div class="grid grid-cols-6 border-b border-stone-500">
+                                <p class="col-span-1">
                                     <a href="http://localhost:8083" target="_blank"
                                        class="w-full h-full p-2 block hover:bg-stone-800 hover:text-stone-100">
                                         Redis Commander
                                     </a>
                                 </p>
-                                <p class="p-2 col-span-2">http://localhost:8083</p>
+                                <p class="p-2 col-span-2"><code class="text-emerald-700">http://localhost:8083</code></p>
                                 <p class="col-span-3 p-2 text-sm ">
                                     <strong>Redis</strong> is an in-memory data structure store, used as a
                                     distributed, in-memory key–value database, cache and message broker. </p>
                             </div>
 
-                            <div class="grid grid-cols-7 border-b border-stone-500">
-                                <p class="col-span-2">
+                            <div class="grid grid-cols-6 border-b border-stone-500">
+                                <p class="col-span-1">
                                     <a href="http://localhost:8085" target="_blank"
                                        class="w-full h-full p-2 block hover:bg-stone-800 hover:text-stone-100">
                                         Memcached Admin
                                     </a>
                                 </p>
-                                <p class="p-2 col-span-2">http://localhost:8085</p>
+                                <p class="p-2 col-span-2"><code class="text-emerald-700">http://localhost:8085</code></p>
                                 <p class="col-span-3 p-2 text-sm ">
                                     <strong>Memcached</strong> in-memory key-value store for small chunks of arbitrary data
                                     (strings, objects) from results of database calls, API calls, or page rendering.
@@ -183,27 +179,27 @@
                                 </p>
                             </div>
 
-                            <div class="grid grid-cols-7 border-b border-stone-500">
-                                <p class="col-span-2">
+                            <div class="grid grid-cols-6 border-b border-stone-500">
+                                <p class="col-span-1">
                                     <a href="http://localhost:7700" target="_blank"
                                        class="w-full h-full p-2 block hover:bg-stone-800 hover:text-stone-100">
                                         Meilisearch
                                     </a>
                                 </p>
-                                <p class="p-2 col-span-2">http://localhost:7700</p>
+                                <p class="p-2 col-span-2"><code class="text-emerald-700">http://localhost:7700</code></p>
                                 <p class="col-span-3 p-2 text-sm ">
                                     Open source full text search engine.
                                 </p>
                             </div>
 
-                            <div class="grid grid-cols-7 border-b border-stone-500">
-                                <p class="col-span-2 ">
+                            <div class="grid grid-cols-6 border-b border-stone-500">
+                                <p class="col-span-1">
                                     <a href="http://localhost:8900" target="_blank"
                                        class="w-full h-full p-2 block hover:bg-stone-800 hover:text-stone-100">
                                         Minio
                                     </a>
                                 </p>
-                                <p class="p-2 col-span-2">http://localhost:8900</p>
+                                <p class="p-2 col-span-2"><code class="text-emerald-700">http://localhost:8900</code></p>
                                 <p class="col-span-3 p-2 text-sm ">
                                     Open source AWS S3 replacement.
                                 </p>
