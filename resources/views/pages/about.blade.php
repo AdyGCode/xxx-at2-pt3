@@ -12,7 +12,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
 
                     <section class="mb-6">
-                        <h2 class="text-3xl pb-6">About</h2>
+                        <h2 class="text-3xl pb-6">{{ trans('general.about') }}</h2>
                         <p class="pb-2">This project is created for teaching and assessment purposes only.</p>
                         <p class="pb-2">The base code is used for teaching purposes. It is available for anyone to use, as
                             long as the <code class="text-emerald-700">ReadMe.md</code>,
@@ -31,25 +31,26 @@
                     </section>
 
                     <section class="mb-6">
-                        <h2 class="text-3xl pb-6">The Code</h2>
+                        <h2 class="text-3xl pb-6">{{ trans('general.the_code') }}</h2>
                         <p class="pb-2">This code is provided with no legal avenues available for any loss or damage that may
                             be incurred from its use. All responsibility is taken by the end user / client /
                             developers who make use of the source code and techniques shown.</p>
                         <p class="pb-2">Information on the requirements for this sample code are shown in the ReadMe based
                             documents.</p>
-                        <p class="pb-2">Repository: <a href="http://github.com/AdyGCode/xxx-saas-laravel-mongodb-demo">
+                        <p class="pb-2">{{ trans('general.repository') }}: <a href="https://github
+                        .com/AdyGCode/xxx-saas-laravel-mongodb-demo">
                                 https://github.com/AdyGCode/xxx-saas-laravel-mongodb-demo
                             </a>.</p>
                     </section>
 
                     <section class="mb-6">
-                        <h3 class="text-2xl pb-6">Development and Public Access</h3>
+                        <h3 class="text-2xl pb-6">{{ trans('general.development_and_public_access') }}</h3>
                         <div class="border border-stone-800">
                             <div class="grid grid-cols-9 border border-b border-stone-800 bg-stone-800 text-stone-100">
                                 <p class="col-span-1 p-2">
-                                    Version
+                                    {{ trans('general.version') }}
                                 </p>
-                                <p class="p-2 col-span-4">Address</p>
+                                <p class="p-2 col-span-4">{{ trans('general.address') }}</p>
                                 <p class="col-span-4 p-2 "></p>
                             </div>
 
@@ -86,7 +87,7 @@
                     </section>
 
                     <section class="mb-6">
-                        <h3 class="text-2xl pb-6">Development Stack Administration</h3>
+                        <h3 class="text-2xl pb-6">{{ trans('general.development_stack_administration') }}</h3>
                         <p class="pb-6">
                             When using Docker and Sail with the <code class="text-emerald-700">docker-compose.yaml</code>
                             file from this project, you may access the following administration interfaces for a variety of
@@ -94,10 +95,10 @@
                         <div class="border border-stone-800">
                             <div class="grid grid-cols-6 border border-b border-stone-800 bg-stone-800 text-stone-100">
                                 <p class="col-span-1 p-2">
-                                    Service
+                                    {{ trans('general.service') }}
                                 </p>
-                                <p class="p-2 col-span-2">Address</p>
-                                <p class="col-span-3 p-2 ">Notes</p>
+                                <p class="p-2 col-span-2">{{ trans('general.address') }}</p>
+                                <p class="col-span-3 p-2 ">{{ trans('general.notes') }}</p>
                             </div>
 
                             <div class="grid grid-cols-6 border-b border-stone-500 bg-amber-200">
