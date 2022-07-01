@@ -22,7 +22,7 @@
                         </p>
 
                         <p class="bg-emerald-800 text-emerald-50 p-3">
-                            Cars
+                            {{ trans('general.cars') }}
                         </p>
                     </div>
 
@@ -34,7 +34,7 @@
                         </p>
 
                         <p class="bg-rose-800 text-rose-50 p-3">
-                            Collectors
+                            {{ trans('general.collectors') }}
                         </p>
                     </div>
 
@@ -46,7 +46,7 @@
                         </p>
 
                         <p class="bg-indigo-800 text-indigo-50 p-3">
-                            Users
+                            {{ trans('general.users') }}
                         </p>
                     </div>
 
