@@ -1,5 +1,5 @@
 # For more information: https://laravel.com/docs/sail
-version: '3.1'
+version: '3.3'
 services:
     laravel.test:
         build:
@@ -30,6 +30,8 @@ services:
             - meilisearch
             - selenium
             - mongodb
+            - memcached
+
     mongodb:
         image: mongo:latest
         restart: always
@@ -45,8 +47,8 @@ services:
             # service initialisation scripts
             # - ./docker/mongo-entrypoint:/docker-entrypoint-initdb.d
             # named volumes
-            - mongodb:/data/db
-            - mongoconfig:/data/configdb
+            - sail-mongodb:/data/db
+            - sail-mongoconfig:/data/configdb
     mongo-express:
         image: mongo-express
         restart: always
@@ -60,6 +62,7 @@ services:
             ME_CONFIG_MONGODB_SERVER: mongodb
         depends_on:
             - mongodb
+
     mariadb:
         image: 'mariadb:10'
         ports:
@@ -91,17 +94,7 @@ services:
             - PMA_ARBITRARY=1
         depends_on:
             - mariadb
-    hue:
-        image: gethue/hue:latest
-        restart: always
-        ports:
-            - '8888:8888'
-        networks:
-            - sail
-        depends_on:
-            - mariadb
-        volumes:
-            - 'hue:/usr/share/hue/desktop/conf/'
+
     redis:
         image: 'redis:alpine'
         ports:
@@ -120,8 +113,15 @@ services:
         restart: always
         environment:
             - REDIS_HOSTS=local:redis:6379
+            - HTTP_USER=sail
+            - HTTP_PASSWORD=password
+        networks:
+            - sail
         ports:
             - "8083:8081"
+        depends_on:
+            - redis
+
     minio:
         image: 'minio/minio:latest'
         ports:
@@ -139,6 +139,7 @@ services:
             test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
             retries: 3
             timeout: 5s
+
     mailhog:
         image: 'mailhog/mailhog:latest'
         ports:
@@ -146,12 +147,27 @@ services:
             - '${FORWARD_MAILHOG_DASHBOARD_PORT:-8025}:8025'
         networks:
             - sail
+
     memcached:
         image: 'memcached:alpine'
         ports:
-            - '11211:11211'
+            - '${FORWARD_MEMCACHED_PORT:-11211}:11211'
         networks:
             - sail
+    memcached-admin:
+        image: jacksoncage/phpmemcachedadmin:latest
+        depends_on:
+            - memcached
+        environment:
+            - MEMCACHED_HOST=memcached
+            - MEMCACHED_PORT=${FORWARD_MEMCACHED_PORT:-11211}
+        ports:
+            - 8085:80
+        networks:
+            - sail
+        volumes:
+            - 'sail-memcached:/var/www/html'
+
     meilisearch:
         image: 'getmeili/meilisearch:latest'
         ports:
@@ -164,27 +180,30 @@ services:
             test: [ "CMD", "wget", "--no-verbose", "--spider",  "http://localhost:7700/health" ]
             retries: 3
             timeout: 5s
+
     selenium:
         image: 'selenium/standalone-chrome'
         volumes:
             - '/dev/shm:/dev/shm'
         networks:
             - sail
+
 networks:
     sail:
         driver: bridge
+
 volumes:
     sail-mariadb:
         driver: local
     sail-redis:
         driver: local
+    sail-memcached:
+        driver: local
     sail-minio:
         driver: local
     sail-meilisearch:
         driver: local
-    mongodb:
+    sail-mongodb:
         driver: local
-    mongoconfig:
-        driver: local
-    hue:
+    sail-mongoconfig:
         driver: local

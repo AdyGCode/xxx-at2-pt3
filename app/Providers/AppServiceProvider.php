@@ -23,8 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // https://stackoverflow.com/questions/68964382/laravel-assets-routes-and-url-not-working-when-browse-https-after-deploy-in-a
-        /*
+        /* https://stackoverflow.com/questions/68964382/laravel-assets-routes-and-url-not-working-when-browse-https-after-deploy-in-a
+         *
          * Solution 2 : There are another way to allow https by forcing in your AppServiceProvider or Create a new
          * middleware to implement this. In my code snippet I decide to use AppServiceProvider because easy to implement.
          * Open app/Providers/AppServiceProvider.php in any text editor and write
@@ -36,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
          * }
          */
 
-        if ($this->app->environment('production')) {
+        if (env('APP_ENV')) {
             $this->app['request']->server->set('HTTPS', true);
         }
     }
