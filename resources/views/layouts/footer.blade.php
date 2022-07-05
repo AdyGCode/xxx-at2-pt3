@@ -1,7 +1,7 @@
 <footer class="w-full text-white bg-sky-800 mt-8 center">
     <div class="px-4 sm:px-6 lg:px-12 py-2 grid grid-cols-2 text-stone-200 text-sm">
         <p class="text-start font-semibold">
-            {{ env('APP_ENV')==="local"?'Development':'Production'}}
+            {{ Str::ucfirst( env('APP_ENV')??'development') }}
             version: {{ env('APP_VERSION', '0.0.0') }}
         </p>
         <p class="text-end">
@@ -14,7 +14,7 @@
         <p class="flex-1 text-stone-200 text-xs md:text-sm">
             This application is written as part of <br class="md:hidden">
             the learning materials for developing <br class="lg:hidden">
-            software as a service, API, and NoSQL technologies.
+            Software as a Service, APIs, and NoSQL technologies.
         </p>
     </div>
 </footer>
