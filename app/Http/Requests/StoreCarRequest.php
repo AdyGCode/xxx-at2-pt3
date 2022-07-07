@@ -13,8 +13,7 @@ class StoreCarRequest extends FormRequest
      */
     public function authorize()
     {
-        # TODO: allow when authenticated
-        return false;
+        return auth()->user();
     }
 
     /**
@@ -26,7 +25,10 @@ class StoreCarRequest extends FormRequest
     {
         # TODO: Validate the car details
         return [
-
+            'model' => ['required',],
+            'manufacturer' => ['min:1', 'max:255', 'required',],
+            'price' => [],
+            'code' => [],
         ];
     }
 }

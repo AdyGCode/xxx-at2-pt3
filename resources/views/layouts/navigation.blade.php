@@ -23,8 +23,7 @@ shadow-zinc-500">
                                 :active="request()->routeIs('collectors*')">
                         {{ __('Collectors') }}
                     </x-nav-link>
-                    {{-- TODO: update the card link to be to the cars.index--}}
-                    <x-nav-link :href="route('dashboard')"
+                    <x-nav-link :href="route('cars.index')"
                                 :active="request()->routeIs('cars*')">
                         {{ __('Cars') }}
                     </x-nav-link>
@@ -110,7 +109,7 @@ shadow-zinc-500">
                                    :active="request()->routeIs('collectors*')">
                 {{ __('Collectors') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('cars.index')" :active="request()->routeIs('cars*')">
                 {{ __('Cars') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">

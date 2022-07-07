@@ -14,7 +14,7 @@ class UpdateCarRequest extends FormRequest
     public function authorize()
     {
         # TODO: allow when authenticated
-        return false;
+        return auth()->user();
     }
 
     /**
@@ -24,9 +24,11 @@ class UpdateCarRequest extends FormRequest
      */
     public function rules()
     {
-        # TODO: validation rules
         return [
-            //
+            'model' => ['required',],
+            'manufacturer' => ['min:1', 'max:255', 'required',],
+            'price' => [],
+            'code' => ['unique'],
         ];
     }
 }

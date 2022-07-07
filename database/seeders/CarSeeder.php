@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 use App\Models\Car;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
+use Symfony\Component\Console\Helper\ProgressBar;
+use Symfony\Component\Console\Output\ConsoleOutput;
 
 class CarSeeder extends Seeder
 {
@@ -21,7 +24,7 @@ class CarSeeder extends Seeder
 
         $seedCars = [
             [
-                "code" => "MOGAN-44",
+                "code" => "MORGAN-44",
                 "manufacturer" => "Morgan",
                 "model" => "4/4",
                 "price" => 107000,
@@ -87,7 +90,7 @@ class CarSeeder extends Seeder
                 "price" => 68740,
             ],
             [
-                "code" => "ARIEL-ATOM4",
+                "code" => "ARIEL-ATOM35",
                 "manufacturer" => "Ariel",
                 "model" => "Atom 3.5R",
                 "price" => 188000,
@@ -242,14 +245,24 @@ class CarSeeder extends Seeder
             ],
         ];
 
-        shuffle($seedCars);
-
         $countItems = count($seedCars);
+
+        $output = new ConsoleOutput();
+        $progressBar = new ProgressBar($output, $countItems);
+
         $this->command->getOutput()->writeln("<info>Seeding with {$countItems} Cars.");
 
+        shuffle($seedCars);
+
         foreach ($seedCars as $car) {
+            $car['created_at'] = Carbon::now()->addDays(rand(-1000, 0));
             Car::create($car);
+            $progressBar->advance();
         }
+
+        $progressBar->finish();
+        $this->command->getOutput()->writeln("");
+
 
     }
 }

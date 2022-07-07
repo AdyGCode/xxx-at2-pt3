@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\CollectorController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Artisan;
@@ -33,5 +34,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('collectors', CollectorController::class);
     Route::get('/collectors/{collector}/delete', [CollectorController::class, 'delete'])
         ->name('collectors.delete');
+
+    Route::resource('cars', CarController::class);
+    Route::get('/cars/{car}/delete', [CarController::class, 'delete'])
+        ->name('cars.delete');
+
 });
 require __DIR__ . '/auth.php';
