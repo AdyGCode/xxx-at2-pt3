@@ -12,12 +12,20 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('collectors', function (Blueprint $table) {
+//        Schema::create('collectors', function (Blueprint $table) {
+        Schema::create('collectors', function ($table) {
             $table->id();
             $table->string('given_name', 128)->nullable();
             $table->string('family_name', 192);
-//            $table->json('cars')->nullable();
+            $table->array('cars')->nullable();
             $table->timestamps();
+
+            $table->index(
+                ['family_name', 'given_name',], 'full_name', null,
+                ['sparse' => true, 'unique' => true, 'background' => true,]);
+            $table->index(
+                ['given_name', 'family_name',], 'full_name_reversed', null,
+                ['sparse' => true, 'unique' => true, 'background' => true,]);
         });
     }
 
@@ -28,6 +36,8 @@ return new class extends Migration {
      */
     public function down()
     {
+        Schema::dropIndex('full_name_reversed');
+        Schema::dropIndex('full_name');
         Schema::dropIfExists('collectors');
     }
 };

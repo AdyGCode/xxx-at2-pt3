@@ -12,9 +12,15 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('cars', function (Blueprint $table) {
+        Schema::create('cars', function ($table) {
             $table->id();
+            $table->string('code')->default('UNKNOWN');
+            $table->string('model')->default('** UNKNOWN **');
+            $table->string('manufacturer')->default('** UNKNOWN **');
+            $table->unsignedMediumInteger('price')->default(0);
             $table->timestamps();
+
+            $table->index(['code'], 'code', null, ['sparse' => true, 'unique' => true, 'background' => true,]);
         });
     }
 
@@ -25,6 +31,8 @@ return new class extends Migration {
      */
     public function down()
     {
+        Schema::dropIndex('code');
+
         Schema::dropIfExists('cars');
     }
 };

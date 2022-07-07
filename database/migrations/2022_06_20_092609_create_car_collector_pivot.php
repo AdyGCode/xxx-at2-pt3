@@ -14,9 +14,16 @@ return new class extends Migration {
     {
         Schema::create('car_collector', function (Blueprint $table) {
             $table->id();
-            $table->string('car_id');
             $table->string('collector_id');
+            $table->string('car_id');
             $table->timestamps();
+
+            $table->index(
+                ['collector_id', 'car_id',], 'collector_car', null,
+                ['sparse' => true, 'unique' => true, 'background' => true,]);
+            $table->index(
+                ['car_id','collector_id', ], 'car_collector', null,
+                ['sparse' => true, 'unique' => true, 'background' => true,]);
         });
     }
 
@@ -27,6 +34,9 @@ return new class extends Migration {
      */
     public function down()
     {
+        Schema::dropIndex('collector_car');
+        Schema::dropIndex('car_collector');
+
         Schema::dropIfExists('car_collector');
     }
 };
