@@ -6,7 +6,6 @@ use App\Http\Requests\StoreCollectorRequest;
 use App\Http\Requests\UpdateCollectorRequest;
 use App\Models\Car;
 use App\Models\Collector;
-use Illuminate\Http\Request;
 
 class CollectorController extends Controller
 {
@@ -51,7 +50,7 @@ class CollectorController extends Controller
         $newData = [
             "given_name" => $request->given_name,
             "family_name" => $request->family_name,
-            "cars" => $request->cars ?? [],
+            "owned" => $request->owned ?? [],
         ];
         Collector::create($newData);
 
@@ -107,13 +106,13 @@ class CollectorController extends Controller
         $collector->update([
             "given_name" => $request->given_name ?? $collector->given_name,
             "family_name" => $request->family_name ?? $collector->family_name,
-            "cars" => $request->cars ?? [],
+            "owned" => $request->owned ?? [],
         ]);
 
         /*  Use the above or the statements below to do the updates:
             $collector->given_name = $request->given_name ?? $collector->given_name;
             $collector->family_name = $request->family_name ?? $collector->family_name;
-            $collector->cars = $request->cars ?? [];
+            $collector->owned = $request->owned ?? [];
             $collector->save();
          */
 

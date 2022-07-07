@@ -3,9 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\Car;
-use App\Models\CarCollector;
 use App\Models\Collector;
 use Illuminate\Database\Seeder;
+use Symfony\Component\Console\Helper\ProgressBar;
+use Symfony\Component\Console\Output\ConsoleOutput;
 
 class CollectorsSeeder extends Seeder
 {
@@ -17,16 +18,19 @@ class CollectorsSeeder extends Seeder
     public function run()
     {
 
-        $collectors = [
+        $seedCollectors = [
             [
                 "given_name" => "Evan",
                 "family_name" => "Keel",
-                "cars" => [],
+                "owned" => [
+                    "ARIEL-ATOM35",
+                    "ARIEL-ATOM4",
+                ],
             ],
             [
                 "given_name" => "Jo",
                 "family_name" => "Kerr",
-                "cars" => [
+                "owned" => [
                     "BMW-M",
                     "KTM-XBOWR",
                     "AUDI-EGT",
@@ -40,8 +44,8 @@ class CollectorsSeeder extends Seeder
             [
                 "given_name" => "Izzy",
                 "family_name" => "Kidding",
-                "cars" => [
-                    "MOGAN-44",
+                "owned" => [
+                    "MORGAN-44",
                     "ARIEL-ATOM4",
                     "AUDI-S8",
                 ],
@@ -49,7 +53,7 @@ class CollectorsSeeder extends Seeder
             [
                 "given_name" => "Fay",
                 "family_name" => "King",
-                "cars" => [
+                "owned" => [
                     "ARIEL-ATOM4",
                     "MINI-CONV",
                     "BMW-I",
@@ -62,20 +66,20 @@ class CollectorsSeeder extends Seeder
             [
                 "given_name" => "Joe",
                 "family_name" => "King",
-                "cars" => [
-                    "ARIEL-ATOM4",
+                "owned" => [
+                    "ARIEL-ATOM35",
                     "ARIEL-ATOM4",
                     "BMW-1",
                     "VW-POLO",
                     "MINI-CLUB",
-                    "MOGAN-44",
+                    "MORGAN-44",
                     "MG-MGZS",
                 ],
             ],
             [
                 "given_name" => "Raney",
                 "family_name" => "Schauer",
-                "cars" => [
+                "owned" => [
                     "VW-AMAROK",
                     "MG-HS",
                     "BMW-M2",
@@ -84,25 +88,25 @@ class CollectorsSeeder extends Seeder
             [
                 "given_name" => "June",
                 "family_name" => "Schauer",
-                "cars" => [
+                "owned" => [
                     "MORGAN-ROADSTER",
                     "MINI-3DH",
                     "TESLA-MODY",
-                    "TESLA-MODY",
+                    "TESLA-MODX",
                     "MINI-3DH",
                 ],
             ],
             [
                 "given_name" => "April",
                 "family_name" => "Schauer",
-                "cars" => [
+                "owned" => [
                     "MG-MGZS",
                 ],
             ],
             [
                 "given_name" => "Al K.",
                 "family_name" => "Seltzer",
-                "cars" => [
+                "owned" => [
                     "ARIEL-ATOM4",
                     "AUDI-A8",
                     "AUDI-A1",
@@ -114,11 +118,11 @@ class CollectorsSeeder extends Seeder
             [
                 "given_name" => "Dee",
                 "family_name" => "Sember",
-                "cars" => [
-                    "ARIEL-ATOM4",
+                "owned" => [
+                    "ARIEL-ATOM35",
                     "BMW-1",
                     "VW-TROC",
-                    "MOGAN-44",
+                    "MORGAN-44",
                     "MG-MGZS",
                     "TESLA-TRUCK",
                     "ARIEL-ATOM4",
@@ -127,28 +131,45 @@ class CollectorsSeeder extends Seeder
             [
                 "given_name" => "Justin",
                 "family_name" => "Tune",
-                "cars" => [
-                    "AUDI-A1",
+                "owned" => [
+                    "ARIEL-ATOM35",
                     "ARIEL-ATOM4",
-                    "BMW-8",
+                    "AUDI-A1",
+                    "AUDI-A8",
+                    "AUDI-EGT",
+                    "AUDI-Q2",
+                    "AUDI-S8",
                     "BMW-8",
                     "BMW-I",
-                    "AUDI-S8",
+                    "BMW-M2",
+                    "BMW-M6",
+                    "KTM-XBOWR",
+                    "MG-HS",
+                    "MINI-3DH",
+                    "MINI-CLUB",
+                    "MINI-CONV",
+                    "MINI-COOPER",
+                    "MORGAN-44",
                     "MORGAN-ROADSTER",
-                    "AUDI-A8",
+                    "TESLA-MODX",
+                    "TESLA-MODY",
+                    "TESLA-TRUCK",
+                    "VW-AMAROK",
+                    "VW-POLO",
+                    "VW-TROC",
                 ],
             ],
             [
                 "given_name" => "Carrie A.",
                 "family_name" => "Tune",
-                "cars" => [
+                "owned" => [
                     "AUDI-EGT",
                 ],
             ],
             [
                 "given_name" => "Quinn",
                 "family_name" => "Tuplets",
-                "cars" => [
+                "owned" => [
                     "AUDI-S8",
                     "BMW-8",
                     "KTM-XBOWR",
@@ -159,7 +180,7 @@ class CollectorsSeeder extends Seeder
             [
                 "given_name" => "Colin",
                 "family_name" => "Allcars",
-                "cars" => [
+                "owned" => [
                     "VW-AMAROK",
                     "MINI-3DH",
                 ],
@@ -167,20 +188,20 @@ class CollectorsSeeder extends Seeder
             [
                 "given_name" => "Cary",
                 "family_name" => "Baggs",
-                "cars" => [
+                "owned" => [
                     "MINI-CONV",
                 ],
             ],
             [
                 "given_name" => "Winnie",
                 "family_name" => "Bago",
-                "cars" => [
+                "owned" => [
                 ],
             ],
             [
                 "given_name" => "Frank N.",
                 "family_name" => "Beans",
-                "cars" => [
+                "owned" => [
                     "MINI-CONV",
                     "BMW-8",
                     "AUDI-EGT",
@@ -189,7 +210,7 @@ class CollectorsSeeder extends Seeder
             [
                 "given_name" => "Harry",
                 "family_name" => "Beard",
-                "cars" => [
+                "owned" => [
                     "KTM-XBOWR",
                     "TESLA-MODX",
                     "TESLA-MODY",
@@ -200,12 +221,12 @@ class CollectorsSeeder extends Seeder
             [
                 "given_name" => "Al B.",
                 "family_name" => "Zienya",
-                "cars" => [],
+                "owned" => [],
             ],
             [
                 "given_name" => "Cy",
                 "family_name" => "Yonarra",
-                "cars" => [
+                "owned" => [
                     "TESLA-MODX",
                     "MG-MG3",
                 ],
@@ -213,12 +234,12 @@ class CollectorsSeeder extends Seeder
             [
                 "given_name" => "Pearl E.",
                 "family_name" => "White",
-                "cars" => [],
+                "owned" => [],
             ],
             [
                 "given_name" => "Sno",
                 "family_name" => "White",
-                "cars" => [
+                "owned" => [
                     "TESLA-MODX",
                     "BMW-2",
                     "ARIEL-ATOM4",
@@ -227,14 +248,14 @@ class CollectorsSeeder extends Seeder
             [
                 "given_name" => "Chuck",
                 "family_name" => "Wagon",
-                "cars" => [
+                "owned" => [
                     "KTM-XBOWR",
                 ],
             ],
             [
                 "given_name" => "Patty",
                 "family_name" => "Wagon",
-                "cars" => [
+                "owned" => [
                     "MINI-CONV",
                     "MINI-CLUB",
                     "BMW-1",
@@ -243,26 +264,52 @@ class CollectorsSeeder extends Seeder
             [
                 "given_name" => "Cara",
                 "family_name" => "Van",
-                "cars" => [],
+                "owned" => [],
             ],
         ];
 
-        shuffle($collectors);
+        $countItems = count($seedCollectors);
 
-        $countItems = count($collectors);
+        $output = new ConsoleOutput();
+        $progressBar = new ProgressBar($output, $countItems);
+
         $this->command->getOutput()->writeln("<info>Seeding {$countItems} Collectors.");
 
-        foreach ($collectors as $collector) {
+        shuffle($seedCollectors);
+
+        foreach ($seedCollectors as $collector) {
             $newCollector = [
                 "given_name" => $collector['given_name'],
                 "family_name" => $collector['family_name'],
             ];
             $theCollector = Collector::create($newCollector);
-            foreach ($collector['cars'] as $car) {
+            $ownedCars = null;
+            foreach ($collector["owned"] as $car) {
                 $carDetails = Car::where('code', $car)->first();
-                CarCollector::create(['car_id' => $carDetails->id, 'collector_id' => $theCollector->id]);
+
+                if ($carDetails) {
+                    /* Add each car to cars array for fast lookup */
+                    $ownedCars[] = [
+                        'car_id' => $carDetails->id,
+                        'code' => $carDetails->model,
+                        'model' => $carDetails->model,
+                        'manufacturer' => $carDetails->manufacturer,
+                    ];
+                } else {
+                    $this->command->getOutput()->writeln("<warn>{$car} not in car collection.");
+                }
             }
+            /* add all the owned cars to the collector at once... */
+            if ($ownedCars) {
+                $theCollector->push('owned', $ownedCars);
+            }
+            $progressBar->advance();
+
         }
+
+
+        $progressBar->finish();
+        $this->command->getOutput()->writeln("");
 
     }
 

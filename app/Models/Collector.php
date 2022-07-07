@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 //use Illuminate\Database\Eloquent\Model;
-use Jenssegers\Mongodb\Eloquent\Model;
 
 class Collector extends Model
 {
@@ -21,7 +21,7 @@ class Collector extends Model
     protected $fillable = [
         'given_name',
         'family_name',
-        'cars',
+        'owned',
     ];
 
     /**
@@ -39,7 +39,7 @@ class Collector extends Model
     protected $casts = [];
 
 
-    public function cars()
+    public function owns()
     {
         return $this->hasMany(Car::class);
     }
