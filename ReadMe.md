@@ -19,9 +19,9 @@ Cloud Application Development cluster in the ICT50220 Diploma of Information Tec
 ## System Details
 
 - Docker/Docker Desktop
-- Laravel 9.18
-- MongoDB 5
-- PHP 8.1
+- Laravel 9.18+
+- MongoDB 5+
+- PHP 8.1+
 
 ## Requirements Details
 

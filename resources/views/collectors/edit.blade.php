@@ -1,12 +1,15 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex">
-            <h2 class="flex-1 font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="flex-1 font-semibold text-2xl text-gray-800 leading-tight">
                 {{ __('Collectors') }}
             </h2>
             <div>
                 <a href="{{ route('collectors.create') }}"
-                   class="flex-0 rounded text-stone-100 bg-stone-500 p-1 mx-2">
+                   class="flex-0 rounded text-center w-48 px-2 py-1
+                               bg-stone-500 text-white border border-stone-500 shadow-md shadow-gray-400
+                               hover:bg-stone-50 hover:border-stone-500 hover:text-stone-500 hover:shadow-sm
+                               transition ease-in-out duration-300">
                     {{ __("Add Collector") }}
                 </a>
             </div>
@@ -80,7 +83,7 @@
                     class="rounded w-24 p-2
         bg-sky-500 -ml-4 text-sky-100 border border-sky-50
         hover:bg-sky-100 hover:border-sky-500 hover:text-sky-500
-        transition ease-in-out duration-250">
+        transition ease-in-out duration-500">
                 {{ __('Save') }}
             </button>
 
@@ -88,7 +91,7 @@
                     class="rounded w-24  p-2
         bg-amber-500 text-amber-100 border border-amber-50
         hover:bg-amber-100 hover:border-amber-500 hover:text-amber-500
-        transition ease-in-out duration-250">
+        transition ease-in-out duration-500">
                 {{ __('Clear') }}
             </button>
 
@@ -96,7 +99,7 @@
                class="rounded text-center w-24 p-2
    bg-stone-500 text-stone-100 border border-stone-50
    hover:bg-stone-100 hover:border-stone-500 hover:text-stone-500
-   transition ease-in-out duration-250">
+   transition ease-in-out duration-500">
                 {{ __('Back') }}
             </a>
 

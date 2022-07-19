@@ -1,13 +1,16 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex">
-            <h2 class="flex-1 font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="flex-1 font-semibold text-2xl text-gray-800 leading-tight">
                 {{ __('Cars') }}
             </h2>
 
-            <div class="pt-2 mr-6 mt-2">
+            <div class="flex-0 mr-6 mt-0 flex">
                 <a href="{{ route('cars.create') }}"
-                   class="flex-0 rounded text-stone-100 bg-stone-500 p-2 mx-2">
+                   class="rounded text-center w-48 px-2 py-1
+                               bg-stone-500 text-white border border-stone-500 shadow-md shadow-gray-400
+                               hover:bg-stone-50 hover:border-stone-500 hover:text-stone-500 hover:shadow-sm
+                               transition ease-in-out duration-300">
                     {{ __("Add Car") }}
                 </a>
             </div>
@@ -15,7 +18,7 @@
             <div>
                 <form method="get" action="{{ route('cars.index')}}">
                     <div class="relative">
-                        <svg class="absolute z-20 cursor-pointer top-[18px] left-4" width="16" height="16"
+                        <svg class="absolute z-20 cursor-pointer top-[9px] left-4" width="16" height="16"
                              viewBox="0 0 16 16"
                              fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -28,11 +31,13 @@
                         {{--                            Clear</button>--}}
 
                         <p onclick="eraseText();"
-                           class="absolute z-20 text-xs font-medium leading-3 text-gray-600 underline right-4 top-[18px] cursor-pointer">
+                           class="absolute z-20 text-xs font-medium leading-3 text-gray-600 underline right-4 top-[12px]
+                           cursor-pointer">
                             Clear</p>
 
                         <input id="output"
-                               class="relative text-sm leading-none text-gray-600 bg-white rounded lg:max-w-[452px] w-full px-10 py-4 outline-none"
+                               class="relative text-sm leading-none text-gray-600 bg-white rounded lg:max-w-[452px] w-full
+                               px-10 py-2 outline-none"
                                type="text" name="search" placeholder="Search for..." value="{{$searchFor??''}}">
                     </div>
                 </form>
@@ -50,7 +55,7 @@
                 <th class="bg-stone-700 text-left py-2 px-2 mx-2">{{ __('Model') }}</th>
                 <th class="bg-stone-700 text-left py-2 px-2 mx-2">{{ __('Manufacturer') }}</th>
                 <th class="bg-stone-700 text-left py-2 px-2 mx-2">{{ __('Code') }}</th>
-                <th class="bg-stone-700 text-right py-2 pr-4 mx-2">{{ __('Actions') }}</th>
+                <th class="bg-stone-700 text-center py-2 pr-4 mx-2">{{ __('Actions') }}</th>
             </tr>
             </thead>
             <tbody class="">
@@ -59,14 +64,13 @@
                        hover:bg-stone-200 hover:border-b-1 hover:border-stone-500
                        transition ease-in-out">
                     <td class="px-2 py-1">{{ $key+1 }}</td>
-                    <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis
-                overflow-hidden">
+                    <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis overflow-hidden">
                         {{ Str::of($car->model)->limit(24) }}
                     </td>
                     <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis overflow-hidden">
                         {{ Str::of($car->manufacturer)->limit(24) }}
                     </td>
-                    <td class="w-2/12 text-left px-2 py-1">{{ $car->code }}</td>
+                    <td class="w-2/12 text-left px-2 py-1 text-sm">{{ $car->code }}</td>
                     <td class="px-2 py-1">
                         <div class="flex justify-end gap-1">
 

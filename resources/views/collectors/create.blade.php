@@ -1,12 +1,15 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex">
-            <h2 class="flex-1 font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="flex-1 font-semibold text-2xl text-gray-800 leading-tight">
                 {{ __('Collectors') }}
             </h2>
             <div>
                 <a href="{{ route('collectors.create') }}"
-                   class="flex-0 rounded text-stone-100 bg-stone-500 p-1 mx-2">
+                   class="flex-0 rounded text-center w-48 px-2 py-1
+                               bg-stone-500 text-white border border-stone-500 shadow-md shadow-gray-400
+                               hover:bg-stone-50 hover:border-stone-500 hover:text-stone-500 hover:shadow-sm
+                               transition ease-in-out duration-300">
                     {{ __("Add Collector") }}
                 </a>
             </div>
@@ -53,15 +56,15 @@
 
         <div class="flex w-full my-6 ">
             <label for="Cars" class="w-32 pt-2">{{ __('Cars Owned') }}</label>
-            <input type="text" id="Cars" name="cars"
+            <input type="text" id="Cars" name="owned"
                    class="flex-1 rounded-md border-1 border-stone-300
-                                           @error('cars') text-red-500 border-red-500 @enderror">
+                                           @error('owned') text-red-500 border-red-500 @enderror">
         </div>
         {{-- TODO: Add method to add cars to list of those owned --}}
         <p class="m-0 p-1 mt-1 ml-32 bg-sky-200 text-sky-800 text-italic">
             Cars Owned: This will not function at this time, next version will have method to
             add owned cars.</p>
-        @error('cars')
+        @error('owned')
         <p class="m-0 p-0 mt-1 ml-32 italic text-red-500">
             {{ __('A car is required.') }}
         </p>

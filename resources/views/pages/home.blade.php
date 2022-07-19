@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __("Welcome to Cars-n-Collectors") }}
+{{--            {{ __("Welcome to Cars-n-Collectors") }}--}}
         </h2>
     </x-slot>
 
@@ -16,8 +16,7 @@
                         <p class="flex justify-between text-emerald-700 font-black m-2 align-text-top">
                             <span><i class="fa fa-solid fa-car-side text-emerald-500"></i></span>
                             <span>
-                             {{-- TODO: make sure no random number added to the cars here --}}
-                                {{ $cars + rand(1,9999) + 123456}}
+                                {{ $cars }}
                             </span>
                         </p>
 

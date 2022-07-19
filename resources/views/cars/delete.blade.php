@@ -1,11 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex">
-            <h2 class="flex-1 font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="flex-1 font-semibold text-2xl text-gray-800 leading-tight">
                 {{ __('Cars') }}
             </h2>
             <a href="{{ route('cars.create') }}"
-               class="flex-0 rounded text-stone-100 bg-stone-500 p-1 mx-2">
+               class="flex-0 rounded text-center w-48 px-2 py-1
+                               bg-stone-500 text-white border border-stone-500 shadow-md shadow-gray-400
+                               hover:bg-stone-50 hover:border-stone-500 hover:text-stone-500 hover:shadow-sm
+                               transition ease-in-out duration-300">
                 {{ __("Add Car") }}
             </a>
         </div>

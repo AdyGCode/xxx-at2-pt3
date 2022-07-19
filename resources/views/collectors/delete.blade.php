@@ -1,11 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex">
-            <h2 class="flex-1 font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="flex-1 font-semibold text-2xl text-gray-800 leading-tight">
                 {{ __('Collectors') }}
             </h2>
             <a href="{{ route('collectors.create') }}"
-               class="flex-0 rounded text-stone-100 bg-stone-500 p-1 mx-2">
+               class="flex-0 rounded text-center w-48 px-2 py-1
+                               bg-stone-500 text-white border border-stone-500 shadow-md shadow-gray-400
+                               hover:bg-stone-50 hover:border-stone-500 hover:text-stone-500 hover:shadow-sm
+                               transition ease-in-out duration-300">
                 {{ __("Add Collector") }}
             </a>
         </div>
@@ -38,7 +41,7 @@
     <div class="flex w-full my-6 ">
         <p class="w-32 text-stone-500">{{ __('Cars Owned') }}</p>
         <p class="flex-1 flex -ml-1 text-sm gap-1">
-            @foreach($collector->cars as $car)
+            @foreach($collector->owned as $car)
                 <span class="p-1 px-2 rounded-full bg-stone-200 text-900">{{ $car }}</span>
             @endforeach
         </p>
