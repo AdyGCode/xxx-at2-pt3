@@ -6,7 +6,6 @@ use App\Models\User;
 use DateTimeZone;
 use Exception;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
@@ -114,7 +113,7 @@ class UsersSeeder extends Seeder
                 'timezone' => "",
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1000,
                 "name" => "Evan Keel",
                 "email" => "Evan.Keel@example.com",
                 'email_verified_at' => now(),
@@ -124,7 +123,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1001,
                 "name" => "Jo Kerr",
                 "email" => "Jo.Kerr@example.com",
                 'email_verified_at' => now(),
@@ -134,7 +133,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1002,
                 "name" => "Izzy Kidding",
                 "email" => "Izzy.Kidding@example.com",
                 'email_verified_at' => now(),
@@ -144,7 +143,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1003,
                 "name" => "Fay King",
                 "email" => "Fay.King@example.com",
                 'email_verified_at' => now(),
@@ -154,7 +153,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1004,
                 "name" => "Joe King",
                 "email" => "Joe.King@example.com",
                 'email_verified_at' => now(),
@@ -164,7 +163,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1005,
                 "name" => "Raney Schauer",
                 "email" => "Raney.Schauer@example.com",
                 'email_verified_at' => now(),
@@ -174,7 +173,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1006,
                 "name" => "June Schauer",
                 "email" => "June.Schauer@example.com",
                 'email_verified_at' => now(),
@@ -184,7 +183,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1007,
                 "name" => "April Schauer",
                 "email" => "April.Schauer@example.com",
                 'email_verified_at' => now(),
@@ -194,7 +193,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1008,
                 "name" => "Al K. Seltzer",
                 "email" => "Al.K.Seltzer@example.com",
                 'email_verified_at' => now(),
@@ -204,7 +203,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1009,
                 "name" => "Dee Sember",
                 "email" => "Dee.Sember@example.com",
                 'email_verified_at' => now(),
@@ -214,7 +213,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1010,
                 "name" => "Justin Tune",
                 "email" => "Justin.Tune@example.com",
                 'email_verified_at' => now(),
@@ -224,7 +223,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1011,
                 "name" => "Carrie A. Tune",
                 "email" => "Carrie.A.Tune@example.com",
                 'email_verified_at' => now(),
@@ -234,7 +233,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1012,
                 "name" => "Quinn Tuplets",
                 "email" => "Quinn.Tuplets@example.com",
                 'email_verified_at' => now(),
@@ -244,7 +243,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1013,
                 "name" => "Colin Allcars",
                 "email" => "Colin.Allcars@example.com",
                 'email_verified_at' => now(),
@@ -254,7 +253,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1014,
                 "name" => "Cary Baggs",
                 "email" => "Cary.Baggs@example.com",
                 'email_verified_at' => now(),
@@ -264,7 +263,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1015,
                 "name" => "Winnie Bago",
                 "email" => "Winnie.Bago@example.com",
                 'email_verified_at' => now(),
@@ -274,7 +273,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1016,
                 "name" => "Frank N. Beans",
                 "email" => "Frank.N.Beans@example.com",
                 'email_verified_at' => now(),
@@ -284,7 +283,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1017,
                 "name" => "Harry Beard",
                 "email" => "Harry.Beard@example.com",
                 'email_verified_at' => now(),
@@ -294,7 +293,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1018,
                 "name" => "Al B. Zienya",
                 "email" => "Al.B.Zienya@example.com",
                 'email_verified_at' => now(),
@@ -304,7 +303,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1019,
                 "name" => "Cy Yonarra",
                 "email" => "Cy.Yonarra@example.com",
                 'email_verified_at' => now(),
@@ -314,7 +313,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1020,
                 "name" => "Pearl E. White",
                 "email" => "Pearl.E.White@example.com",
                 'email_verified_at' => now(),
@@ -324,7 +323,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1021,
                 "name" => "Sno White",
                 "email" => "Sno.White@example.com",
                 'email_verified_at' => now(),
@@ -334,7 +333,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1022,
                 "name" => "Chuck Wagon",
                 "email" => "Chuck.Wagon@example.com",
                 'email_verified_at' => now(),
@@ -344,7 +343,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1023,
                 "name" => "Patty Wagon",
                 "email" => "Patty.Wagon@example.com",
                 'email_verified_at' => now(),
@@ -354,7 +353,7 @@ class UsersSeeder extends Seeder
 
             ],
             [
-//                'id' => random_int(20, 512),
+                'id' => 1024,
                 "name" => "Cara Van",
                 "email" => "Cara.Van@example.com",
                 'email_verified_at' => now(),
@@ -380,20 +379,9 @@ class UsersSeeder extends Seeder
 
         shuffle($seedUsers);
 
-        /* Set a seed ID of 1000 to allow for non-collector users
-           All IDs below 1000 are used by admin/staff */
-        $id = 1000;
-
         foreach ($seedUsers as $seed) {
-            $seed['password'] = Hash::make($seed['password']);
-            if (isset($seed['id'])) {
-                $id = $seed['id'] + 1;
-            } else {
-                $seed['id'] = $id++;
-            }
-
             if (isset($seed['timezone']) && $seed['timezone'] === "") {
-                $seed['timezone'] = $timezoneList[random_int(0, $numZones)];
+                $seed['timezone'] = $timezoneList[random_int(0, $numZones - 1)];
             }
 
             $user = User::create($seed);

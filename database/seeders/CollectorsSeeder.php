@@ -283,30 +283,19 @@ class CollectorsSeeder extends Seeder
                 "family_name" => $collector['family_name'],
             ];
             $theCollector = Collector::create($newCollector);
-            $ownedCars = null;
-            foreach ($collector["owned"] as $car) {
-                $carDetails = Car::where('code', $car)->first();
+            $theCollector->save();
 
+            foreach ($collector["owned"] as $car) {
+                $carDetails = Car::whereCode($car)->first();
                 if ($carDetails) {
-                    /* Add each car to cars array for fast lookup */
-                    $ownedCars[] = [
-                        'car_id' => $carDetails->id,
-                        'code' => $carDetails->model,
-                        'model' => $carDetails->model,
-                        'manufacturer' => $carDetails->manufacturer,
-                    ];
+                    $theCollector->cars()->attach($carDetails);
                 } else {
                     $this->command->getOutput()->writeln("<warn>{$car} not in car collection.");
                 }
             }
-            /* add all the owned cars to the collector at once... */
-            if ($ownedCars) {
-                $theCollector->push('owned', $ownedCars);
-            }
+
             $progressBar->advance();
-
         }
-
 
         $progressBar->finish();
         $this->command->getOutput()->writeln("");

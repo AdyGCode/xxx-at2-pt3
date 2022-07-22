@@ -27,6 +27,7 @@ class Car extends Model
         'model',
         'manufacturer',
         'price',
+        'collector_ids'
     ];
 
     /**
@@ -46,7 +47,7 @@ class Car extends Model
 
     public function collectors()
     {
-        $this->belongsToMany(Collector::class);
+        return $this->belongsToMany(Collector::class, null, 'collector_ids', 'car_ids');
     }
 
 }

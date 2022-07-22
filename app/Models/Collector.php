@@ -21,7 +21,7 @@ class Collector extends Model
     protected $fillable = [
         'given_name',
         'family_name',
-        'owned',
+        'car_ids',
     ];
 
     /**
@@ -39,9 +39,10 @@ class Collector extends Model
     protected $casts = [];
 
 
-    public function owns()
+    public function cars()
     {
-        return $this->hasMany(Car::class);
+//        return $this->hasMany(Car::class);
+        return $this->belongsToMany(Car::class, null, 'car_ids', 'collector_ids');
     }
 
 }

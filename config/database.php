@@ -17,7 +17,7 @@ return [
 
     # Leaving the default to MySQL, but you may change to mongodb
     # TODO: optional - change default mysql to mongodb
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'mongodb'),
 
     /*
     |--------------------------------------------------------------------------
