@@ -7,20 +7,19 @@ use Jenssegers\Mongodb\Eloquent\Model;
 
 //use Illuminate\Database\Eloquent\Model;
 
-class Collector extends Model
+class Manufacturer extends Model
 {
     use HasFactory;
 
     # Name the collection 'table' for MongoDB
-    protected $collection = 'collectors';
+    protected $collection = 'manufacturers';
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'given_name',
-        'family_name',
+        'name',
         'car_ids',
     ];
 
@@ -41,8 +40,8 @@ class Collector extends Model
 
     public function cars()
     {
-//        return $this->hasMany(Car::class);
-        return $this->belongsToMany(Car::class, null, 'collector_ids', 'car_ids');
+        return $this->hasMany(Car::class);
+//        return $this->hasMany(Car::class, 'id', 'car_ids');
     }
 
 }

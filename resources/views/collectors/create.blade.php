@@ -54,17 +54,22 @@
         </p>
         @enderror
 
-        <div class="flex w-full my-6 ">
-            <label for="Cars" class="w-32 pt-2">{{ __('Cars Owned') }}</label>
-            <input type="text" id="Cars" name="owned"
-                   class="flex-1 rounded-md border-1 border-stone-300
-                                           @error('owned') text-red-500 border-red-500 @enderror">
+        <div class="flex flex-col w-full my-6 ">
+            <div class="flex w-full my-2 ">
+                <label for="Cars" class="w-32 pt-2">{{ __('Cars Owned') }}</label>
+                @livewire('dropdowns')
+            </div>
+            <div class="flex w-full my-2 ">
+                <label for="" class="w-32 pt-2"></label>
+                @livewire('dropdowns')
+            </div>
+
         </div>
         {{-- TODO: Add method to add cars to list of those owned --}}
         <p class="m-0 p-1 mt-1 ml-32 bg-sky-200 text-sky-800 text-italic">
             Cars Owned: This will not function at this time, next version will have method to
             add owned cars.</p>
-        @error('owned')
+        @error('car')
         <p class="m-0 p-0 mt-1 ml-32 italic text-red-500">
             {{ __('A car is required.') }}
         </p>

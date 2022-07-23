@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Car;
+use App\Models\Manufacturer;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 use Symfony\Component\Console\Helper\ProgressBar;
@@ -255,7 +256,9 @@ class CarSeeder extends Seeder
         shuffle($seedCars);
 
         foreach ($seedCars as $car) {
+            $manufacturer = Manufacturer::where('name', $car['manufacturer'])->first();
             $car['created_at'] = Carbon::now()->addDays(rand(-1000, 0));
+            $car['manufacturer_id'] = $manufacturer->id;
             Car::create($car);
             $progressBar->advance();
         }

@@ -247,6 +247,12 @@ you *usually* may execute:
 sail artisan migrate:fresh --seed --step
 ```
 
+## Laravel Livewire installation (for specialist inputs)
+
+```shell
+sail composer require livewire/livewire
+```
+
 # Other changed locations
 
 Check the files named below, or in each of the following folders to see which have changed:

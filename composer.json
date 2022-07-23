@@ -16,6 +16,7 @@
         "laravel/sanctum": "^2.14.1",
         "laravel/telescope": "^4.9",
         "laravel/tinker": "^2.7",
+        "livewire/livewire": "^2.10",
         "magarrent/laravel-currency-formatter": "^1.0"
     },
     "require-dev": {

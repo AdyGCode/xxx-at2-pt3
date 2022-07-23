@@ -6,6 +6,7 @@ use App\Models\User;
 use DateTimeZone;
 use Exception;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
@@ -383,7 +384,8 @@ class UsersSeeder extends Seeder
             if (isset($seed['timezone']) && $seed['timezone'] === "") {
                 $seed['timezone'] = $timezoneList[random_int(0, $numZones - 1)];
             }
-
+            /* DO NOT forget to hash your passwords! */
+            $seed['password'] = Hash::make($seed['password']);
             $user = User::create($seed);
             $progressBar->advance();
         }
